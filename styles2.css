@@ -1,0 +1,491 @@
+/* Universal stylesss  font*/
+
+    @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Varela+Round&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #dff6f0, #b0e0d3);
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #3e9e8e;
+}
+.logo a{
+    text-decoration: none;
+    color: #3e9e8e;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3e9e8e;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff7f50;
+ 
+}
+
+/* Hero Section */
+/* .hero {
+    padding: 100px 20px;
+    background: url('https://th.bing.com/th/id/R.d64c457c2ecf56f3ad75cf14a33fee2f?rik=oMe4SCZhzPzpNQ&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fb%2f0%2fe%2f1516021-mental-health-wallpaper-1920x1080-for-computer.jpg&ehk=nPLIUxrV24jlMvpKYyf3PDyxc9An3O7%2blYewmwJlBhA%3d&risl=&pid=ImgRaw&r=0') no-repeat center center/cover;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+} */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* Adds slight darkness for better text visibility */
+    padding: 55px;
+    border-radius: 10px;}
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
+            z-index: -1;
+        }
+    
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: #3e9e8e;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #ff7f50;
+    transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #f5f5f5;
+    padding: 50px 20px;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h3 {
+    font-size: 2.2em;
+    color: #3e9e8e;
+}
+
+/* Resources Section */
+.resources {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Stories Section */
+.stories {
+    background: #e0f7f4;
+    padding: 60px 20px;
+}
+
+.story {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story p {
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Blog Section */
+.blog {
+    background: #f5f5f5;
+    padding: 60px 20px;
+}
+
+.article {
+    margin: 15px 0;
+}
+
+.article a {
+    font-weight: bold;
+    color: #3e9e8e;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+.article a:hover {
+    color: #ff7f50;
+    text-decoration: underline;
+}
+
+/* Quote Section */
+.quote {
+    padding: 50px 20px;
+    background: #3e9e8e;
+    color: #fff;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #1e1e1e;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .resources, .stats, .stories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box, .card, .story {
+        width: 90%;
+    }
+
+    .quote {
+        font-size: 1.2em;
+    }
+}
+
+           /* self care */
+ 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Self-Care Tips Section */
+.tips {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.tip-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tip-card:hover {
+    transform: scale(1.05);
+}
+
+.tip-img {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #2a9d8f;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.learn-more:hover {
+    background: #21867a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+    .tips-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-content {
+        font-size: 18px;
+    }
+}
+
+
+
+
+                                                /* Therapy Page */
+.therapy-intro {
+    text-align: center;
+    padding: 50px;
+    background: #3e9e8e;
+    color: white;
+}
+
+.therapy-types {
+    padding: 50px;
+    text-align: center;
+}
+
+.therapy-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.therapy-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.therapy-card:hover {
+    transform: scale(1.05);
+}
+.therapy-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+.video-container {
+    margin: 20px auto;
+    width: 80%;
+}
+iframe {
+    width: 80%;
+    height: 450px;
+    border-radius: 10px;
+}
+.therapy-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.therapy-card:hover {
+    transform: scale(1.05);
+}
+
+.therapy-benefits {
+    padding: 50px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.therapy-benefits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.therapy-benefits li {
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+/* Therapy Form */
+.therapy-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.therapy-form h2 {
+    color: #3e9e8e;
+}
+
+.therapy-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.therapy-form label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+.therapy-form input,
+.therapy-form textarea,
+.therapy-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.therapy-form .submit-btn {
+    background: #3e9e8e;
+    color: white;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.therapy-form .submit-btn:hover {
+    background: #ff7f50;
+    transform: scale(1.05);
+}
+/* .dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .hero-content {
+    background: rgba(255, 255, 255, 0.1);
+} */
