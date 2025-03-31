@@ -3,125 +3,898 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Awareness</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Varela+Round&display=swap" rel="stylesheet">
+    <title>MindWell - Mental Health Support</title>
     <link rel="stylesheet" href="styles2.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Header -->
     <header>
-        <div class="logo"><a href="index.html">🌿 MindWell</a></div>
+        <div class="logo">
+            <a href="index.html">MindWell</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="self-care.html">Self-Care</a></li>
-                <li><a href="therapy.html">Therapy</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="therapy.html">Contact</a></li>
-
-                </a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#self-care">Self-Care</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <video autoplay muted loop  class="background-video">
-            <source src="videos/Main2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content"><h1>💙 Prioritize Your Mental Health</h1>
-        <p>Taking care of your mind is just as important as taking care of your body.</p>
-        <a href="therapy.html" class="cta-btn">Get Support</a></div>
-    </section>
-
-    <section class="about">
-        <h2>🌍 Why Mental Health Matters</h2>
-        <p>Mental health is vital to overall well-being. It affects how we think, feel, and act in daily life. Our goal is to raise awareness, provide resources, and create a safe space for everyone.</p>
-       
-    </section>
-    <h2>📊 Mental Health in Numbers</h2>
-    <section class="stats">
-       
-        <div class="stat-box">
-            <h3>1 in 4</h3>
-            <p>people experience a mental health disorder each year.</p>
-        </div>
-        <div class="stat-box">
-            <h3>75%</h3>
-            <p>of mental health conditions develop before age 24.</p>
-        </div>
-        <div class="stat-box">
-            <h3>50%</h3>
-            <p>of people with mental illness do not receive treatment.</p>
-        </div>
-    </section>
-    <h2>🛠️ Helpful Resources</h2>
-    <section class="resources">
-       
-        <div class="card">
-            <img src="Images/Med.png" alt="Meditation">
-            <h3>🧘‍♂️ Mindfulness & Meditation</h3>
-            <p>Learn meditation techniques to reduce stress and improve focus.</p>
-            <a href="self-care.html">Explore</a>
-        </div>
-        <div class="card">
-            <img src="images/Therepy.webp" alt="Therapy">
-            <h3>🩺 Therapy & Counseling</h3>
-            <p>Find the right therapy approach and connect with professionals.</p>
-            <a href="therapy.html">Find Support</a>
-        </div>
-        <div class="card">
-            <img src="images/community.png" alt="Community">
-            <h3>🤝 Supportive Community</h3>
-            <p>Join a safe space where people share their mental health journeys.</p>
-            <a href="community.html">Join Now</a>
-        </div>
-    </section>
-
-    <section class="stories">
-        <h2>🌟 Success Stories</h2>
-        <div class="story">
-            <p>"Therapy changed my life. I never realized how much talking to a professional could help until I gave it a chance."</p>
-            <h4>- Lovedeep, 20</h4>
-        </div>
-        <div class="story">
-            <p>"Meditation helped me manage my anxiety better. Now, I feel more in control of my thoughts."</p>
-            <h4>- Vinit, 19</h4>
-        </div>
-        <div class="story">
-            <p>"Finding a supportive community made me feel less alone in my journey."</p>
-            <h4>- Tushar, 19</h4>
-        </div>
-    </section>
-
-    <section class="blog">  
-        <h2>📚 Featured Articles</h2>
-        <div class="article">
-            <h3><a href="#">5-Minute Meditation Techniques</a></h3>
-            <p>Learn how to relax and improve focus in just 5 minutes.</p>
-        </div>
-        <div class="article">
-            <h3><a href="#">How Diet Affects Mental Health</a></h3>
-            <p>Eating the right foods can help improve mood and energy.</p>
-        </div>
-        <div class="article">
-            <h3><a href="#">Managing Stress in a Busy Life</a></h3>
-            <p>Simple techniques to reduce stress daily.</p>
-        </div>
-    </section>
-
-    <section class="quote">
-        <h2>"Your mental health is a priority. Your happiness is essential. Your self-care is a necessity."</h2>
-    </section>
+    <!-- Hero Section -->
     
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Prioritize Your Mental Health</h1>
+            <p>Taking care of your mind is just as important as taking care of your body.</p>
+            <div class="cta-buttons">
+                <a href="#resources" class="cta-btn primary-btn">Get Support</a>
+                <a href="#about" class="cta-btn secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="season-panel" id="summer-panel">
+            <div class="season-image"> <video autoplay muted loop  class="background-video">
+                <source src="videos/therpy.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video></div></div>
+        <a href="#about" class="scroll-down">
+            <span>Scroll Down</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+        </a>
+    </section>
 
-    <footer id="contact">
-        <p>© 2025 MindWell | Mental Health Matters</p>
-        <p>Contact us: +91 13339008 - Tushar Verma | Email tusharverma7082@gmail.com</p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Why Mental Health Matters</h2>
+                <p class="section-description">Mental health is vital to overall well-being. It affects how we think, feel, and act in daily life.</p>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="People talking in support group">
+                    </div>
+                    <div class="about-text">
+                        <p>Our mental health influences our thoughts, feelings, and behaviors in daily life. It also affects our ability to cope with stress, overcome challenges, build relationships, and recover from life's setbacks and hardships.</p>
+                        <p>At MindWell, our goal is to raise awareness, provide resources, and create a safe space for everyone to prioritize their mental well-being.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Educational Resources</h4>
+                                    <p>Evidence-based information about mental health conditions and treatments.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Support Network</h4>
+                                    <p>Connect with professionals and peers who understand your journey.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Self-Care Tools</h4>
+                                    <p>Practical techniques to manage stress and improve well-being.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h4>Stigma Reduction</h4>
+                                    <p>Open conversations to normalize mental health discussions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stat-box fade-in delay-1">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <h3>1 in 4</h3>
+                <p>people experience a mental health disorder each year.</p>
+            </div>
+            <div class="stat-box fade-in delay-2">
+                <div class="stat-icon"><i class="fas fa-child"></i></div>
+                <h3>75%</h3>
+                <p>of mental health conditions develop before age 24.</p>
+            </div>
+            <div class="stat-box fade-in delay-3">
+                <div class="stat-icon"><i class="fas fa-hospital-user"></i></div>
+                <h3>50%</h3>
+                <p>of people with mental illness do not receive treatment.</p>
+            </div>
+            <div class="stat-box fade-in delay-4">
+                <div class="stat-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                <h3>80%</h3>
+                <p>of people can recover with proper support and treatment.</p>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="resources">
+            <div class="container">
+                <h2 class="section-title">Mental Health Resources</h2>
+                <p class="section-description">Curated tools and information to support your mental health journey</p>
+                
+                <div class="tabs-container">
+                    <div class="tabs-navigation">
+                        <button class="tab-button active" data-tab="mindfulness">Mindfulness</button>
+                        <button class="tab-button" data-tab="therapy">Therapy</button>
+                        <button class="tab-button" data-tab="community">Community</button>
+                        <button class="tab-button" data-tab="crisis">Crisis Support</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="mindfulness-tab">
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Meditation practice">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Meditation Basics</h3>
+                                    <p>Learn foundational meditation techniques to calm your mind and reduce stress in just minutes a day.</p>
+                                    <a href="#" class="card-button">Explore</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1591343395902-1adcb454c4e2?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Breathing exercises">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Breathing Techniques</h3>
+                                    <p>Simple breathing exercises that help manage anxiety and improve focus in stressful situations.</p>
+                                    <a href="#" class="card-button">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Nature mindfulness">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Nature Mindfulness</h3>
+                                    <p>Discover how connecting with nature can enhance your mental wellbeing and provide perspective.</p>
+                                    <a href="#" class="card-button">Discover</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="therapy-tab">
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Therapy session">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Finding a Therapist</h3>
+                                    <p>Guidance on how to find the right mental health professional for your specific needs.</p>
+                                    <a href="#" class="card-button">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Cognitive behavioral therapy">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Types of Therapy</h3>
+                                    <p>Overview of different therapeutic approaches and how they might help with specific challenges.</p>
+                                    <a href="#" class="card-button">Explore</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Online therapy">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Online Therapy Options</h3>
+                                    <p>Information about virtual therapy services that provide convenient access to mental health support.</p>
+                                    <a href="#" class="card-button">Discover</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="community-tab">
+                        <!-- Community Resources Content -->
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Support group">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Support Groups</h3>
+                                    <p>Find local and online peer support groups focused on specific mental health concerns.</p>
+                                    <a href="#" class="card-button">Find Groups</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Community forum">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Online Forums</h3>
+                                    <p>Moderated online communities where you can share experiences and find support anonymously.</p>
+                                    <a href="#" class="card-button">Join Now</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Volunteer opportunities">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Volunteer Opportunities</h3>
+                                    <p>Ways to get involved and support mental health initiatives in your community.</p>
+                                    <a href="#" class="card-button">Get Involved</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="crisis-tab">
+                        <!-- Crisis Support Content -->
+                        <div class="resources-grid">
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://plus.unsplash.com/premium_photo-1664392276756-9cb929de3fe0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Helpline">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>24/7 Crisis Helplines</h3>
+                                    <p>Immediate support for those experiencing a mental health crisis or having thoughts of suicide.</p>
+                                    <a href="#" class="card-button">Get Help Now</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Text crisis line">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Text Crisis Services</h3>
+                                    <p>Text-based support for those who prefer to communicate via messaging rather than phone.</p>
+                                    <a href="#" class="card-button">Text Support</a>
+                                </div>
+                            </div>
+                            <div class="resource-card">
+                                <div class="resource-image">
+                                    <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Emergency services">
+                                </div>
+                                <div class="resource-content">
+                                    <h3>Emergency Services</h3>
+                                    <p>Information on when and how to access emergency mental health services in your area.</p>
+                                    <a href="#" class="card-button">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Comprehensive Mental Health Support</h2>
+                <p class="section-description">Discover various approaches to mental wellness that can help on your journey</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Individual Therapy</h3>
+                        <p>One-on-one sessions with licensed therapists to address personal challenges in a private setting.</p>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Group Support</h3>
+                        <p>Connect with others facing similar challenges in facilitated group sessions designed for mutual support.</p>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Mindfulness Practices</h3>
+                        <p>Learn evidence-based mindfulness techniques to manage stress and improve mental clarity.</p>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Mental Health Assessments</h3>
+                        <p>Confidential screenings to help identify potential mental health concerns and guide your next steps.</p>
+                        <a href="#" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section id="stories" class="stories">
+            <div class="container">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-description">Real experiences from people on their mental health journeys</p>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial-track">
+                        <div class="testimonial-slide">
+                            <div class="story">
+                                <div class="story-content">
+                                    <p>"Therapy changed my life. I never realized how much talking to a professional could help until I gave it a chance. Now I have tools to manage my anxiety that I use every day."</p>
+                                </div>
+                                <div class="story-author">
+                                    <div class="author-image">
+                                        <img src="Images/lovedeep.jpg" alt="Lovedeep's portrait">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Lovedeep, 20</h4>
+                                        <p>Student, Managing Anxiety</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="story">
+                                <div class="story-content">
+                                    <p>"Meditation helped me manage my anxiety better. Now, I feel more in control of my thoughts. Even just 5 minutes of practice each morning has made a significant difference."</p>
+                                </div>
+                                <div class="story-author">
+                                    <div class="author-image">
+                                        <img src="Images/vini.jpg" alt="Vinit's portrait">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Vinit, 19</h4>
+                                        <p>Engineering Student</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="story">
+                                <div class="story-content">
+                                    <p>"Finding a supportive community made me feel less alone in my journey. Sharing experiences with others who understand has been incredibly healing for me."</p>
+                                </div>
+                                <div class="story-author">
+                                    <div class="author-image">
+                                        <img src="Images/tushar.jpg" alt="Tushar's portrait">
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Tushar, 19</h4>
+                                        <p>College Student</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <span class="slider-dot active" data-slide="0"></span>
+                        <span class="slider-dot" data-slide="1"></span>
+                        <span class="slider-dot" data-slide="2"></span>
+                    </div>
+                    
+                    <div class="slider-arrows">
+                        <div class="slider-arrow prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="slider-arrow next">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Self-Care Section -->
+        <section id="self-care" class="self-care">
+            <div class="container">
+                <h2 class="section-title">Daily Self-Care Practices</h2>
+                <p class="section-description">Simple techniques you can incorporate into your routine for better mental health</p>
+                
+                <div class="techniques-container">
+                    <div class="technique">
+                        <h3>Morning Mindfulness <span class="time">5 min</span></h3>
+                        <div class="technique-content">
+                            <p>Start your day with 5 minutes of deep breathing and intention setting to create a positive mindset.</p>
+                            <ol class="steps">
+                                <li>Find a quiet space as soon as you wake up</li>
+                                <li>Take 10 deep breaths, focusing on the sensation</li>
+                                <li>Set one positive intention for your day</li>
+                                <li>Express gratitude for something in your life</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="technique">
+                        <h3>Digital Detox <span class="time">30 min</span></h3>
+                        <div class="technique-content">
+                            <p>Disconnect from screens to reduce anxiety and improve focus.</p>
+                            <ol class="steps">
+                                <li>Set aside 30 minutes with no digital devices</li>
+                                <li>Engage in an analog activity you enjoy</li>
+                                <li>Notice how your mind feels without digital stimulation</li>
+                                <li>Gradually increase your digital-free time</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="technique">
+                        <h3>Nature Connection <span class="time">15 min</span></h3>
+                        <div class="technique-content">
+                            <p>Spending time in natural settings has proven benefits for mental wellbeing.</p>
+                            <ol class="steps">
+                                <li>Find a park, garden, or natural area nearby</li>
+                                <li>Walk mindfully, noticing plants, sounds, and sensations</li>
+                                <li>Sit quietly and observe your surroundings</li>
+                                <li>Breathe deeply and feel the connection to nature</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Health Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <div class="container">
+                <h2 class="section-title">Mental Wellness Check-In</h2>
+                <p class="section-description">A simple self-assessment to help you reflect on your current mental wellbeing</p>
+                
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h3>How are you feeling today?</h3>
+                        <p>This quick check-in can help you become more aware of your mental state</p>
+                    </div>
+                    
+                    <form class="quiz-form">
+                        <div class="quiz-question">
+                            <p>1. How would you rate your overall stress level this week?</p>
+                            <div class="rating-scale">
+                                <label class="rating-option">
+                                    <input type="radio" name="stress" value="1">
+                                    <span class="rating-text">Very Low</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="stress" value="2">
+                                    <span class="rating-text">Low</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="stress" value="3">
+                                    <span class="rating-text">Moderate</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="stress" value="4">
+                                    <span class="rating-text">High</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="stress" value="5">
+                                    <span class="rating-text">Very High</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question">
+                            <p>2. How satisfied have you been with your sleep quality?</p>
+                            <div class="rating-scale">
+                                <label class="rating-option">
+                                    <input type="radio" name="sleep" value="1">
+                                    <span class="rating-text">Very Dissatisfied</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="sleep" value="2">
+                                    <span class="rating-text">Dissatisfied</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="sleep" value="3">
+                                    <span class="rating-text">Neutral</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="sleep" value="4">
+                                    <span class="rating-text">Satisfied</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="sleep" value="5">
+                                    <span class="rating-text">Very Satisfied</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question">
+                            <p>3. How connected do you feel to others in your life right now?</p>
+                            <div class="rating-scale">
+                                <label class="rating-option">
+                                    <input type="radio" name="connection" value="1">
+                                    <span class="rating-text">Very Disconnected</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="connection" value="2">
+                                    <span class="rating-text">Somewhat Disconnected</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="connection" value="3">
+                                    <span class="rating-text">Neutral</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="connection" value="4">
+                                    <span class="rating-text">Connected</span>
+                                </label>
+                                <label class="rating-option">
+                                    <input type="radio" name="connection" value="5">
+                                    <span class="rating-text">Very Connected</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-note">
+                            <p><strong>Note:</strong> This is not a diagnostic tool. If you're concerned about your mental health, please consult with a healthcare professional.</p>
+                        </div>
+                        
+                        <button type="submit" class="quiz-submit">See Reflections</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Quotes Wall Section -->
+        <section id="quotes" class="quotes-wall">
+            <div class="container">
+                <h2 class="section-title">Words of Encouragement</h2>
+                <p class="section-description">Inspirational thoughts to help you through difficult moments</p>
+                
+                <div class="quotes-grid">
+                    <div class="quote-card">
+                        <p class="quote-text">"You don't have to see the whole staircase, just take the first step."</p>
+                        <p class="quote-author">Lovedeep Singh</p>
+                    </div>
+                    
+                    <div class="quote-card accent">
+                        <p class="quote-text">"Your present circumstances don't determine where you can go; they merely determine where you start."</p>
+                        <p class="quote-author">Tushar Verma</p>
+                    </div>
+                    
+                    <div class="quote-card">
+                        <p class="quote-text">"You are not your illness. You have an individual story to tell. You have a name, a history, a personality. Staying yourself is part of the battle."</p>
+                        <p class="quote-author">Vinit bhist</p>
+                    </div>
+                    
+                    <div class="quote-card">
+                        <p class="quote-text">"Mental health problems don't define who you are. They are something you experience, but they are not you."</p>
+                        <p class="quote-author">Bhasker Pandey</p>
+                    </div>
+                    
+                    <div class="quote-card accent">
+                        <p class="quote-text">"Self-care is not selfish. You cannot serve from an empty vessel."</p>
+                        <p class="quote-author">Gautam Kumar</p>
+                    </div>
+                    
+                    <div class="quote-card">
+                        <p class="quote-text">"Recovery is not one and done. It is a lifelong journey that takes place one day, one step at a time."</p>
+                        <p class="quote-author">Anonymous</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Mental Health Tips -->
+        <section id="seasonal-tips" class="seasonal-tips">
+            <div class="container">
+                <h2 class="section-title">Seasonal Wellbeing</h2>
+                <p class="section-description">Adapting your mental health practices to the changing seasons</p>
+                
+                <div class="seasons-tabs">
+                    <div class="season-selector">
+                        <input type="radio" name="season" id="spring" checked>
+                        <label for="spring" class="season-tab">Spring</label>
+                        
+                        <input type="radio" name="season" id="summer">
+                        <label for="summer" class="season-tab">Summer</label>
+                        
+                        <input type="radio" name="season" id="autumn">
+                        <label for="autumn" class="season-tab">Autumn</label>
+                        
+                        <input type="radio" name="season" id="winter">
+                        <label for="winter" class="season-tab">Winter</label>
+                        
+                        <div class="slide-indicator"></div>
+                    </div>
+                    
+                    <div class="season-content">
+                        <div class="season-panel" id="spring-panel">
+                            <div class="season-image" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="season-tips">
+                                <h3>Spring Renewal Practices</h3>
+                                <ul class="tips-list">
+                                    <li>Spend time in blooming nature to boost mood with natural beauty</li>
+                                    <li>Practice "mental decluttering" alongside spring cleaning</li>
+                                    <li>Start a small garden – plant care can be therapeutic</li>
+                                    <li>Gradually increase outdoor activity as weather improves</li>
+                                    <li>Create a "growth mindset" journal to align with the season</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="season-panel" id="summer-panel">
+                            <div class="season-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="season-tips">
+                                <h3>Summer Wellness Strategies</h3>
+                                <ul class="tips-list">
+                                    <li>Stay hydrated – dehydration can affect mood and cognition</li>
+                                    <li>Protect your sleep despite longer daylight hours</li>
+                                    <li>Practice mindful eating with seasonal fruits and vegetables</li>
+                                    <li>Create a summer reading list for mental stimulation</li>
+                                    <li>Balance social activities with quiet time to prevent burnout</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="season-panel" id="autumn-panel">
+                            <div class="season-image" style="background-image: url('https://images.unsplash.com/photo-1506202687253-52e1b29d3527?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="season-tips">
+                                <h3>Autumn Transition Techniques</h3>
+                                <ul class="tips-list">
+                                    <li>Embrace the concept of "hygge" – cozy comfort for wellbeing</li>
+                                    <li>Adjust your routine to accommodate decreasing daylight</li>
+                                    <li>Practice gratitude journaling as the harvest season begins</li>
+                                    <li>Prepare for seasonal changes with immune-supporting habits</li>
+                                    <li>Find beauty in the changing colors through mindful observation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="season-panel" id="winter-panel">
+                            <div class="season-image" style="background-image: url('https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="season-tips">
+                                <h3>Winter Wellbeing Practices</h3>
+                                <ul class="tips-list">
+                                    <li>Maximize exposure to natural light to combat seasonal mood changes</li>
+                                    <li>Develop indoor exercise routines to stay active</li>
+                                    <li>Practice self-compassion during the reflective winter months</li>
+                                    <li>Create meaningful rituals to brighten darker days</li>
+                                    <li>Connect with others regularly to prevent isolation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mental Health Journey Map -->
+        <section id="journey" class="journey-map">
+            <div class="container">
+                <h2 class="section-title">Your Mental Health Journey</h2>
+                <p class="section-description">Everyone's path is unique, but understanding common milestones can help guide your way</p>
+                
+                <div class="map-container">
+                    <div class="journey-path">
+                        <!-- The SVG path that connects all stages -->
+                        <svg viewBox="0 0 1000 300" class="path-svg">
+                            <path class="journey-line" d="M50,150 C150,50 200,250 350,150 C500,50 650,250 800,150 C900,100 950,150 950,150" />
+                        </svg>
+                    </div>
+                    
+                    <div class="journey-stages">
+                        <!-- Journey stages -->
+                        <div class="journey-stage" style="left: 5%;">
+                            <div class="stage-point"></div>
+                            <div class="stage-content">
+                                <h3>Awareness</h3>
+                                <p>Recognizing that something feels different and being open to understanding your mental health.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-stage" style="left: 25%;">
+                            <div class="stage-point"></div>
+                            <div class="stage-content">
+                                <h3>Seeking Information</h3>
+                                <p>Learning about mental health conditions, symptoms, and available resources.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-stage" style="left: 50%;">
+                            <div class="stage-point"></div>
+                            <div class="stage-content">
+                                <h3>Reaching Out</h3>
+                                <p>Taking the brave step to connect with support systems, whether professional or personal.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-stage" style="left: 75%;">
+                            <div class="stage-point"></div>
+                            <div class="stage-content">
+                                <h3>Treatment & Tools</h3>
+                                <p>Engaging with therapies, practices, or medications that support your unique needs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="journey-stage" style="left: 95%;">
+                            <div class="stage-point"></div>
+                            <div class="stage-content">
+                                <h3>Ongoing Growth</h3>
+                                <p>Continuing to develop coping skills and resilience while embracing your evolving journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="journey-note">
+                        <p>Remember: Progress isn't always linear. Setbacks are normal parts of any healing journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">Have questions or need support? We're here to help.</p>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <ul class="contact-details">
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                                <span>+91 649489834</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                                <span>exampletushar@gmail.com</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <span>123 Wellness Street, Mental Health Building, 2nd Floor</span>
+                            </li>
+                            <li>
+                                <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                                <span>Monday - Friday: 9am - 5pm</span>
+                            </li>
+                        </ul>
+                        
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-control" placeholder=" " required>
+                                <label for="name" class="form-label">Your Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control" placeholder=" " required>
+                                <label for="email" class="form-label">Email Address</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="subject" class="form-control" placeholder=" ">
+                                <label for="subject" class="form-label">Subject</label>
+                            </div>
+                            
+                            <div class="form-group textarea-group">
+                                <textarea id="message" class="form-control" rows="5" placeholder=" " required></textarea>
+                                <label for="message" class="form-label">Your Message</label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote">
+            <div class="container">
+                <p>"Your mental health is a priority. Your happiness is essential. Your self-care is a necessity."</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MindWell</h3>
+                    <p>Dedicated to promoting mental health awareness and providing resources for everyone's wellbeing journey.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mental Health Articles</a></li>
+                        <li><a href="#">Self-Help Tools</a></li>
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Find a Therapist</a></li>
+                        <li><a href="#">Support Groups</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates, mental health tips, and resources.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-control">
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 MindWell | Mental Health Matters</p>
+                <p>Contact us: +91 649489834 - Tushar Verma | Email: exampletushar@gmail.com</p>
+            </div>
+        </div>
     </footer>
-<script src="script.js"></script>
+
+    <!-- Back to Top Button -->
+    <a href="index.html" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+    <!-- Basic JavaScript for interactivity -->
+   <script src="script.js"></script>
 </body>
 </html>
