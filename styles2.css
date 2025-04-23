@@ -1,6 +1,7 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Varela+Round&display=swap');
 
+
 /* CSS Variables */
 :root {
   /* Color palette */
@@ -92,6 +93,7 @@
   margin: 0 auto;
   padding: 0 var(--spacing-sm);
 }
+
 
 @media (min-width: 576px) {
   .container {
@@ -277,10 +279,12 @@ header.scrolled {
   gap: var(--spacing-xs);
 }
 
-.logo a:before {
-  content: "🌿";
+/* Agar Koi icon lagna hua to laga lena  */
+
+/* .logo a:before {
+  content:"";
   font-size: 1.2em;
-}
+} */
 
 nav ul {
   list-style: none;
@@ -781,6 +785,7 @@ nav a:hover::after {
 .card-button:hover {
   background-color: var(--color-accent);
   transform: translateY(-2px);
+  color: #ffffff;
 }
 
 /* Stories Section */
@@ -1039,6 +1044,7 @@ nav a:hover::after {
   .learn-more:hover {
     background-color: var(--color-accent);
     transform: translateY(-2px);
+    color: rgb(255, 255, 255);
   }
   
   /* Self-Care Section */
@@ -2451,4 +2457,6 @@ nav a {
   transition: width 0.3s ease;
 }
 
-
+pre{
+  font-family: var(--font-primary);
+}
