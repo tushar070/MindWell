@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Individual Therapy | MindWell</title>
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #3e9e8e;
+      --primary-light: #b0e0d3;
+      --primary-dark: #2a7d6f;
+      --accent: #ff7f50;
+      --accent-light: #ffd5c0;
+      --background: #f8fdfc;
+      --text: #333;
+      --card-bg: #fff;
+      --shadow: 0 8px 40px 0 rgba(60,72,88,0.12);
+    }
+    html {
+      background: var(--background);
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      margin: 0;
+      background: var(--background);
+    }
+    header {
+      background: var(--card-bg);
+      padding: 1.5rem 0 1.5rem 0;
+      box-shadow: 0 1px 10px rgba(60,72,88,0.045);
+    }
+    .navbar {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: 'Varela Round', sans-serif;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: color .25s;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 2.2rem;
+      font-size: 1.05rem;
+    }
+    .nav-link {
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color .22s;
+      position: relative;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: var(--accent);
+    }
+    .hero {
+      background: linear-gradient(108deg, var(--primary-light) 0%, var(--accent-light) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4.5rem 16px 2.5rem 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-family: 'Varela Round', sans-serif;
+      font-size: 2.45rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+      animation: fadeSlideDown 1s cubic-bezier(.16,.2,.44,1.1);
+    }
+    .hero .subtitle {
+      max-width: 600px;
+      margin: 0 auto 2.1rem auto;
+      font-size: 1.19rem;
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1.6;
+      animation: fadeIn 1.15s .35s backwards;
+    }
+    .hero .hero-img {
+      width: 340px;
+      max-width: 98vw;
+      border-radius: 1.15rem;
+      margin: 2.5rem auto 0 auto;
+      box-shadow: 0 6px 48px 0 rgba(62,158,142,0.10);
+      animation: floatUp 1.2s cubic-bezier(.23,.8,.32,1.09);
+      transition: box-shadow .3s;
+    }
+    .animated-arrow {
+      margin: 3rem auto 0 auto;
+      font-size: 1.7em;
+      color: var(--primary-dark);
+      animation: bounceArrow 1.8s infinite;
+      opacity: .75;
+    }
+    @keyframes fadeSlideDown {
+      from {opacity:0;transform:translateY(-25px);}
+      to {opacity:1;transform:translateY(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes floatUp {
+      from {opacity: 0;transform:translateY(30px);}
+      to {opacity: 1;transform:translateY(0);}
+    }
+    @keyframes bounceArrow {
+      0%,50%,100% {transform:translateY(0);}
+      25% {transform:translateY(10px);}
+      75% {transform:translateY(-10px);}
+    }
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3.5rem 18px 2.2rem 18px;
+    }
+    .section-title {
+      font-family: 'Varela Round', sans-serif;
+      color: var(--primary-dark);
+      font-size: 2.08rem;
+      margin-bottom: .6rem;
+      text-align: center;
+      letter-spacing: 0.01em;
+      position:relative;
+      z-index: 1;
+      animation: fadeSlideDown .9s cubic-bezier(.16,.2,.44,1.17);
+    }
+    .section-sub {
+      color: var(--text);
+      max-width: 670px;
+      margin: 0 auto 2.2rem auto;
+      text-align: center;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      font-weight: 400;
+      animation: fadeIn 1.2s .2s backwards;
+    }
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.3rem;
+      justify-content: center;
+      margin-bottom: 2.8rem;
+    }
+    .info-card {
+      background: var(--card-bg);
+      flex: 1 1 310px;
+      min-width: 270px;
+      box-shadow: var(--shadow);
+      border-radius: 1.15rem;
+      padding: 2.1rem 1.5rem 1.2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+      z-index: 2;
+      animation: floatUp .85s;
+    }
+    .info-card:hover {
+      transform: translateY(-10px) scale(1.028);
+      box-shadow: 0 14px 56px 0 rgba(62, 158, 142, 0.16);
+    }
+    .info-card .card-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      animation: fadeIn 1s;
+    }
+    .info-card h3 {
+      margin: 0.4rem 0 0.6rem 0;
+      color: var(--primary-dark);
+      font-size: 1.18rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .info-card p {
+      color: var(--text);
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 0.005em;
+      text-align: center;
+      margin: 0;
+    }
+
+    .therapist-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 2.5rem;
+      margin: 3rem auto;
+      justify-content: center;
+    }
+
+    .img-float {
+      flex: 1 1 320px;
+      min-width: 260px;
+      max-width: 400px;
+      display: flex;
+      align-items:center;
+      background: linear-gradient(99deg, #fff7f1 0%, var(--primary-light) 100%);
+      border-radius: 1.1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 28px 0 rgba(255,127,80,0.06);
+    }
+    .img-float img {
+      width: 100%;
+      display: block;
+      border-radius: 1.1rem;
+      object-fit: cover;
+    }
+
+    .therapy-desc {
+      flex: 2 1 360px;
+      min-width: 265px;
+      background: var(--card-bg);
+      border-radius: 1.1rem;
+      padding: 2.1rem 1.5rem 1.4rem 1.8rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: floatUp 0.95s .2s backwards;
+    }
+    .therapy-desc h2 {
+      font-size: 1.38rem;
+      margin: 0 0 0.6rem 0;
+      color: var(--accent);
+      font-family: "Varela Round", sans-serif;
+    }
+    .therapy-desc ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding-left: 0;
+      font-size: 1rem;
+      color: var(--primary-dark);
+      line-height:1.65;
+    }
+    .therapy-desc li {
+      margin-bottom: .48rem;
+      padding-left: .2em;
+    }
+    .therapy-desc p {
+      margin: 0.5rem 0;
+      color: var(--text);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .helpful-tips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin: 1.5rem 0 2.5rem 0;
+      justify-content: center;
+    }
+    .tip {
+      background: linear-gradient(99deg,#f8fdfc 50%, #fff6fb 100%);
+      border: 1.5px solid var(--primary-light);
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.28rem;
+      font-size: 1rem;
+      width: 270px;
+      min-height: 126px;
+      display: flex;
+      align-items: flex-start;
+      transition: box-shadow .18s;
+      box-shadow: 0 2px 10px 0 rgba(62,158,142,0.06);
+      gap:.9em;
+      animation: fadeIn 1.15s;
+    }
+    .tip .fa-lightbulb { color: var(--accent);}
+    .tip .fa-heart { color:var(--primary);}
+    .tip .fa-handshake { color: var(--primary-dark);}
+    .tip .fa-shield-heart { color: #e8544b;}
+    .tip .fa-brain { color: var(--primary);}
+    .tip .fa-headset { color: var(--accent);}
+    .tip-text {
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .faq-section {
+      background: linear-gradient(99deg, var(--primary-light) 45%, #fff4ed 100%);
+      border-radius: 1.28rem;
+      padding: 2.5rem 1.2rem;
+      max-width: 800px;
+      margin: 2.5rem auto 1.2rem auto;
+      box-shadow: 0 1.5px 22px 0 rgba(62,158,142,0.07);
+      animation: fadeIn 1.15s .1s backwards;
+    }
+    .faq-title {
+      text-align: center;
+      color: var(--primary-dark);
+      font-size: 1.48rem;
+      margin-bottom: 1.5rem;
+      font-family:'Varela Round',sans-serif;
+    }
+    .faq {
+      margin: 0 auto;
+      max-width: 680px;
+    }
+    .faq-item {
+      margin-bottom: 1.3rem;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: var(--accent);
+      cursor: pointer;
+      transition: color .15s;
+      position: relative;
+    }
+    .faq-q:after {
+      content: '\f067';
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      margin-left: 0.65em;
+      color: var(--primary-dark);
+      font-size: .92em;
+      vertical-align:middle;
+      transition: transform .22s;
+    }
+    .faq-q.active:after {
+      content: '\f068';
+      transform: rotateZ(180deg);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      font-size: 1rem;
+      color: var(--primary-dark);
+      margin-top: 0.4rem;
+      margin-bottom: 0.1rem;
+      line-height:1.65;
+      transition: max-height 0.4s cubic-bezier(.66,.06,.27,1.43);
+      background: rgba(255,255,255,0.82);
+      border-radius: 0 0 .8rem .8rem;
+      padding: 0 1.2em;
+    }
+    .faq-q.active + .faq-a {
+      max-height: 130px;
+      padding: 0.57em 1.2em 0.9em 1.2em;
+      background: rgba(255,255,255,0.95);
+    }
+
+    @media (max-width: 860px) {
+      .section, .faq-section { padding-left: 5vw; padding-right: 5vw; }
+      .therapist-section { flex-direction: column; gap: 1.5rem; }
+      .img-float, .therapy-desc { max-width: 100%; }
+      .info-grid { gap: 1.2rem; }
+    }
+    @media (max-width: 550px) {
+      .navbar { flex-direction: column; gap: .85rem; }
+      .hero h1 { font-size: 1.7rem;}
+      .section-title {font-size: 1.20rem;}
+      .info-card { min-width: 82vw; }
+      .img-float { min-width:90vw;}
+      .therapy-desc {min-width:94vw;}
+      .faq-section { padding: 1rem .5em; }
+      .section, .faq-section { padding-left: 1vw; padding-right: 1vw; }
+      .helpful-tips { gap: .5em; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MindWell</a>
+
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="individualtherpy.html" class="nav-link active">Individual Therapy</a>
+        <a href="medibasics.html" class="nav-link">Meditation</a>
+        <a href="MindfulnessPractices.html" class="nav-link">Mindfulness</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Individual Therapy (Psychotherapy)</h1>
+    <div class="subtitle">
+      Take a positive step in your mental health journey.<br>
+      Individual therapy offers a safe, confidential space for you to understand yourself, overcome challenges, and grow.
+    </div>
+    <img class="hero-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Therapist and client talking in bright office">
+    <div class="animated-arrow"><i class="fas fa-angle-double-down"></i></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Why Choose Individual Therapy?</h2>
+    <div class="section-sub">
+      Individual therapy is a collaborative process with a trained mental health professional, tailored to your unique needs and goals.<br>
+      It’s often called “talk therapy,” “psychotherapy,” or “counseling.” Here’s why many people seek it:
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="card-icon"><i class="fas fa-comments"></i></span>
+        <h3>Confidential Support</h3>
+        <p>A private space to express your feelings, thoughts, and experiences without fear of judgment.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon"><i class="fas fa-brain"></i></span>
+        <h3>Professional Guidance</h3>
+        <p>Therapists are trained to help you explore challenges, set goals, and develop coping skills.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon"><i class="fas fa-heart"></i></span>
+        <h3>Emotional Growth</h3>
+        <p>Therapy can increase self-awareness, resilience, and positive feelings like confidence and hope.</p>
+      </div>
+      <div class="info-card">
+        <span class="card-icon"><i class="fas fa-toolbox"></i></span>
+        <h3>Practical Tools</h3>
+        <p>Learn strategies to manage stress, anxiety, depression, and life’s transitions.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section therapist-section">
+    <div class="img-float">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Therapist's office with calming decor" />
+    </div>
+    <div class="therapy-desc">
+      <h2>What Happens in Individual Therapy?</h2>
+      <p>Sessions typically last 45–60 minutes and occur weekly or biweekly. Therapy is a safe partnership with your therapist to help you:</p>
+      <ul>
+        <li>Clarify your goals and values</li>
+        <li>Understand your thoughts, feelings, and behaviors</li>
+        <li>Overcome obstacles to your wellbeing</li>
+        <li>Develop skills for coping with stress and difficult emotions</li>
+        <li>Make positive changes and track your personal growth</li>
+      </ul>
+      <p>Every journey is unique—your therapist will adapt their approach based on what’s most helpful for you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Common Reasons to Seek Therapy</h2>
+    <div class="helpful-tips">
+      <div class="tip"><i class="fas fa-lightbulb"></i>
+        <span class="tip-text">Persistent feelings of sadness, worry, or emptiness</span>
+      </div>
+      <div class="tip"><i class="fas fa-heart"></i>
+        <span class="tip-text">Grieving, loss, or major life changes</span>
+      </div>
+      <div class="tip"><i class="fas fa-handshake"></i>
+        <span class="tip-text">Relationship or family struggles</span>
+      </div>
+      <div class="tip"><i class="fas fa-brain"></i>
+        <span class="tip-text">Managing anxiety, stress, or panic attacks</span>
+      </div>
+      <div class="tip"><i class="fas fa-shield-heart"></i>
+        <span class="tip-text">Recovering from trauma or abuse</span>
+      </div>
+      <div class="tip"><i class="fas fa-headset"></i>
+        <span class="tip-text">Feeling lost, “stuck,” or seeking self-growth</span>
+      </div>
+    </div>
+    <div class="section-sub" style="margin-top:.5rem">
+      <strong>Remember:</strong> It’s never “too early” or “not serious enough” for therapy. If you’re unsure, reaching out is always a healthy sign of self-care.
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-title">Frequently Asked Questions</div>
+    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-q">Is therapy confidential?</div>
+        <div class="faq-a">Yes. Everything you share is confidential by law, with rare exceptions if safety is at risk. Your therapist will discuss confidentiality with you in your first session.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I choose the right therapist?</div>
+        <div class="faq-a">Look for therapists with experience related to your concerns. Comfort and trust matter most—don’t hesitate to ask questions or try different therapists until you find the right fit for you.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I feel nervous about starting?</div>
+        <div class="faq-a">Feeling anxious is very normal. Therapists know it can be hard to open up and will meet you at your own pace, helping you feel supported along the way.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long does therapy take?</div>
+        <div class="faq-a">The duration of therapy depends on your goals and needs. Some people benefit from a few sessions, others choose ongoing support for deeper growth.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Let’s Take the First Step Together</h2>
+    <div class="section-sub" style="max-width:580px;">
+      Whether you’re struggling, want to grow, or need a safe space to talk, individual therapy can help you live your best life. <br><br>
+      <span style="color: var(--accent); font-weight:600;">Ready to reach out?</span> <br>
+      Contact a professional, or connect with us for confidential support.
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="contact.html" style="
+        background: var(--primary);
+        color: #fff;
+        border-radius: 2rem;
+        text-decoration:none;
+        font-weight:600;
+        font-size:1.12rem;
+        padding: .75em 2em;
+        box-shadow: 0 2px 20px 0 rgba(62,158,142,0.13);
+        transition: background .18s, box-shadow .22s;">
+        <i class="fas fa-paper-plane"></i> Get Support
+      </a>
+    </div>
+  </section>
+  <footer style="background:#2a7d6f;padding: 2.2rem 0 1.3rem 0; margin-top: 3.5rem;">
+    <div style="max-width:990px;margin:0 auto;text-align:center;color:#fff;letter-spacing:0.04em; font-size:1.04rem;">
+      &copy; 2024 MindWell. For support, reach out via our <a href="contact.html" style="color: var(--accent);text-decoration:none;">Contact Form</a>.
+      <br> Mental health matters—prioritize your wellbeing.
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const answer = this.nextElementSibling;
+        if (this.classList.contains('active')) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = null;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
