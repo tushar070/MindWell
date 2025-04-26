@@ -8,17 +8,150 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Varela+Round&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
   <style>
-    :root {
-      --primary: #3e9e8e;
-      --primary-light: #b0e0d3;
-      --primary-dark: #2a7d6f;
-      --accent: #ff7f50;
-      --accent-light: #ffd5c0;
-      --background: #f8fdfc;
-      --text: #333;
-      --card-bg: #fff;
-      --shadow: 0 8px 40px 0 rgba(60,72,88,0.12);
-    }
+    /* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Varela+Round&display=swap');
+
+
+/* CSS Variables */
+:root {
+  /* Color palette */
+  --color-primary: #3e9e8e;
+  --color-primary-light: #b0e0d3;
+  --color-primary-dark: #2a7d6f;
+  --color-accent: #ff7f50;
+  --color-accent-light: #ffad90;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-background: #f8fdfc;
+  --color-card-bg: #ffffff;
+  --color-gradient-start: #dff6f0;
+  --color-gradient-end: #b0e0d3;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-success: #28a745;
+  
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Varela Round', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+  --spacing-3xl: 8rem;
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 20px;
+  --border-radius-full: 9999px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    /* Base font size - will be adjusted with media queries */
+  font-size: 16px;
+  
+  /* Fluid typography using clamp */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-md: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-2xl: clamp(2rem, 1.6rem + 2vw, 2.5rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+  --font-size-4xl: clamp(3rem, 2.4rem + 3vw, 4rem);
+  
+  /* Fluid spacing */
+  --spacing-xxs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --spacing-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --spacing-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+  --spacing-md: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --spacing-lg: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --spacing-xl: clamp(3rem, 2.4rem + 3vw, 5rem);
+  --spacing-2xl: clamp(4rem, 3.2rem + 4vw, 7rem);
+}
+
+
+/* Adjust container width based on screen size */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+
+@media (min-width: 576px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 80%;
+  }
+}
+
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Improved smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For browsers that support scroll timeline */
+@supports (animation-timeline: scroll()) {
+  .parallax-section {
+    animation-timeline: scroll();
+    animation-range: entry 10% cover 60%;
+    animation-name: fadeScale;
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
     html {
       background: var(--background);
       scroll-behavior: smooth;
@@ -29,44 +162,99 @@
       margin: 0;
       background: var(--background);
     }
-    header {
-      background: var(--card-bg);
-      padding: 1.5rem 0 1.5rem 0;
-      box-shadow: 0 1px 10px rgba(60,72,88,0.045);
-    }
-    .navbar {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-family: 'Varela Round', sans-serif;
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      transition: color .25s;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 2.2rem;
-      font-size: 1.05rem;
-    }
-    .nav-link {
-      color: var(--primary-dark);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      transition: color .22s;
-      position: relative;
-    }
-    .nav-link.active, .nav-link:hover {
-      color: var(--accent);
-    }
+   
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+header.scrolled {
+  padding: 10px 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Agar Koi icon lagna hua to laga lena  */
+
+/* .logo a:before {
+  content:"";
+  font-size: 1.2em;
+} */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-normal);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+}
+
+
     .hero {
       background: linear-gradient(108deg, var(--primary-light) 0%, var(--accent-light) 100%);
       display: flex;
@@ -377,22 +565,161 @@
       .section, .faq-section { padding-left: 1vw; padding-right: 1vw; }
       .helpful-tips { gap: .5em; }
     }
+     /* Footer */
+  footer {
+    background: #1e1e1e;
+    padding: var(--spacing-lg);
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    transition: all var(--transition-normal);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+  }
+  
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  
+  /* Pulse animation for CTA buttons */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(62, 158, 142, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0);
+    }
+  }
+  
+  .primary-btn {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Breathing animation for mindfulness section */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  
+  .breathing-circle {
+    animation: breathe 5s infinite ease-in-out;
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
   </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">MindWell</a>
-
-      <div class="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="individualtherpy.html" class="nav-link active">Individual Therapy</a>
-        <a href="medibasics.html" class="nav-link">Meditation</a>
-        <a href="MindfulnessPractices.html" class="nav-link">Mindfulness</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div>
+   <!-- Header -->
+   <header>
+    <div class="logo">
+        <a href="index.html">MindWell</a>
+    </div>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#stories">Stories</a></li>
+            <li><a href="#self-care">Self-Care</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
   <section class="hero">
     <h1>Individual Therapy (Psychotherapy)</h1>
     <div class="subtitle">
@@ -522,12 +849,55 @@
       </a>
     </div>
   </section>
-  <footer style="background:#2a7d6f;padding: 2.2rem 0 1.3rem 0; margin-top: 3.5rem;">
-    <div style="max-width:990px;margin:0 auto;text-align:center;color:#fff;letter-spacing:0.04em; font-size:1.04rem;">
-      &copy; 2024 MindWell. For support, reach out via our <a href="contact.html" style="color: var(--accent);text-decoration:none;">Contact Form</a>.
-      <br> Mental health matters—prioritize your wellbeing.
-    </div>
-  </footer>
+ <!-- Footer -->
+ <footer>
+  <div class="container">
+      <div class="footer-content">
+          <div class="footer-column">
+              <h3>MindWell</h3>
+              <p>Dedicated to promoting mental health awareness and providing resources for everyone's wellbeing journey.</p>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul class="footer-links">
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#resources">Resources</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#stories">Success Stories</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Resources</h3>
+              <ul class="footer-links">
+                  <li><a href="#">Mental Health Articles</a></li>
+                  <li><a href="#">Self-Help Tools</a></li>
+                  <li><a href="#">Crisis Support</a></li>
+                  <li><a href="#">Find a Therapist</a></li>
+                  <li><a href="#">Support Groups</a></li>
+              </ul>
+          </div>
+          
+          <div class="footer-column">
+              <h3>Newsletter</h3>
+              <p>Subscribe to receive updates, mental health tips, and resources.</p>
+              <form>
+                  <div class="form-group">
+                      <input type="email" placeholder="Your Email" class="form-control">
+                  </div>
+                  <button type="submit" class="submit-btn">Subscribe</button>
+              </form>
+          </div>
+      </div>
+      
+      <div class="copyright">
+          <p>&copy; 2025 MindWell | Mental Health Matters</p>
+          <p>Contact us: +91 0000001021 - Tushar Verma | Email: projectmindwellco@gmail.com</p>
+      </div>
+  </div>
+</footer>
   <script>
     document.querySelectorAll('.faq-q').forEach(q => {
       q.addEventListener('click', function() {

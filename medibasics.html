@@ -498,6 +498,294 @@ nav a:hover::after {
   .primary-btn {
     animation: pulse 2s infinite;
   }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: block;
+    }
+    
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: white;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-normal);
+      z-index: 200;
+      padding: var(--spacing-xl) var(--spacing-lg);
+    }
+    
+    nav.active {
+      right: 0;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+    
+    .hero {
+      height: auto;
+      min-height: 70vh;
+      padding: var(--spacing-xl) var(--spacing-sm);
+    }
+    
+    .hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .hero-content {
+      padding: var(--spacing-lg);
+      width: 90%;
+    }
+    
+    .about {
+      margin-top: 0;
+      padding: var(--spacing-xl) var(--spacing-sm);
+    }
+    
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .about-features {
+      grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+    
+    .tabs-navigation {
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: var(--spacing-xs);
+    }
+    
+    .tab-button {
+      white-space: nowrap;
+      padding: var(--spacing-xs) var(--spacing-md);
+    }
+    
+    .quote p {
+      font-size: var(--font-size-lg);
+    }
+    
+    .footer-column {
+      text-align: center;
+    }
+    
+    .footer-column h3::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* @media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .hero-content {
+      max-width: 700px;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .container {
+      max-width: 1200px;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .container {
+      max-width: 1400px;
+    }
+    
+    .hero-content {
+      max-width: 900px;
+    }
+    
+    html {
+      font-size: 18px;
+    }
+  }
+
+  /* Base styles for mobile-first approach */
+/* (styles for smallest screens) */
+
+/* Small tablets and large phones */
+@media (min-width: 576px) {
+  /* Small device enhancements */
+}
+
+/* Medium tablets */
+@media (min-width: 768px) {
+  /* Medium device enhancements */
+}
+
+/* Laptops and desktops */
+@media (min-width: 992px) {
+  /* Large device enhancements */
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  /* Extra large device enhancements */
+}
+
+/* Extra large screens */
+@media (min-width: 1440px) {
+  /* XXL device enhancements */
+}
+/* Mobile navigation improvements */
+.mobile-menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  z-index: 300; /* Ensure it stays above the nav when open */
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%; /* Wider for better usability */
+  height: 100vh;
+  background: white;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  z-index: 200;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  overflow-y: auto; /* Allow scrolling if menu is tall */
+}
+
+/* Dark overlay when menu is open */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 199;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav.active {
+  right: 0;
+}
+
+nav ul {
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+nav li {
+  width: 100%;
+}
+
+nav a {
+  display: block;
+  padding: var(--spacing-sm);
+  width: 100%;
+  border-bottom: 1px solid var(--color-primary-light);
+}
+
+/* Close button inside nav */
+.nav-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-btn, .nav-close, .nav-overlay {
+    display: none;
+  }
+  
+  nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    overflow-y: visible;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    margin-top: 0;
+  }
+  
+  nav li {
+    width: auto;
+  }
+  
+  nav a {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-bottom: none;
+  }
+}
+
+  
+  /* Accessibility Features */
+  :focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
   </style>
 </head>
 <body>
@@ -505,7 +793,9 @@ nav a:hover::after {
         <div class="logo">
             <a href="index.html">MindWell</a>
         </div>
-     
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+      </button>
        
         </button>
         <nav>
@@ -682,6 +972,61 @@ nav a:hover::after {
         </div>
     </footer>
   <script>
+    // Tab functionality
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        const tabId = button.getAttribute('data-tab') + '-tab';
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// Testimonial slider
+const sliderDots = document.querySelectorAll('.slider-dot');
+const sliderTrack = document.querySelector('.testimonial-track');
+const sliderArrows = document.querySelectorAll('.slider-arrow');
+let currentSlide = 0;
+
+function updateSlider() {
+    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    sliderDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+sliderDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateSlider();
+    });
+});
+
+sliderArrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+        if (arrow.classList.contains('prev')) {
+            currentSlide = (currentSlide - 1 + sliderDots.length) % sliderDots.length;
+        } else {
+            currentSlide = (currentSlide + 1) % sliderDots.length;
+        }
+        updateSlider();
+    });
+});
+
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('nav');
+
+mobileMenuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
     // Fade in on scroll
     function handleFadeIn() {
       const elems = document.querySelectorAll('.animate-in, .fade-in-image');
