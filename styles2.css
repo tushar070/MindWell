@@ -2152,76 +2152,99 @@ nav a:hover::after {
   }
   
   /* Responsive Design */
+  /* Hide mobile nav menu by default */
   @media (max-width: 768px) {
+    nav ul {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      left: 0;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 0;
+      display: none;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  
+    nav ul.show {
+      display: flex;
+    }
+  
     .mobile-menu-btn {
       display: block;
     }
-    
-    nav {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 70%;
-      height: 100vh;
-      background: white;
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-      transition: all var(--transition-normal);
-      z-index: 200;
-      padding: var(--spacing-xl) var(--spacing-lg);
-    }
-    
-    nav.active {
-      right: 0;
-    }
-    
-    nav ul {
-      flex-direction: column;
-      gap: var(--spacing-md);
-    }
-    
-    .hero {
-      height: auto;
-      min-height: 70vh;
-      padding: var(--spacing-xl) var(--spacing-sm);
-    }
-    
-    .hero h1 {
-      font-size: var(--font-size-3xl);
-    }
-    
-    .hero-content {
-      padding: var(--spacing-lg);
-      width: 90%;
-    }
-    
-    .about {
-      margin-top: 0;
-      padding: var(--spacing-xl) var(--spacing-sm);
-    }
-    
-    .about-content {
-      grid-template-columns: 1fr;
-    }
-    
-    .about-features {
-      grid-template-columns: 1fr;
-    }
-    
-    .cta-buttons {
-      flex-direction: column;
-      gap: var(--spacing-sm);
-    }
-    
-    .tabs-navigation {
-      overflow-x: auto;
-      justify-content: flex-start;
-      padding-bottom: var(--spacing-xs);
-    }
-    
-    .tab-button {
-      white-space: nowrap;
-      padding: var(--spacing-xs) var(--spacing-md);
-    }
+  }
+  
+
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .techniques-container {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-track {
+    flex-direction: column;
+  }
+
+  .slider-arrows {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero p {
+    font-size: var(--font-size-base);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
     
     .quote p {
       font-size: var(--font-size-lg);
@@ -2235,7 +2258,7 @@ nav a:hover::after {
       left: 50%;
       transform: translateX(-50%);
     }
-  }
+  
   
   /* @media (min-width: 769px) and (max-width: 1024px) {
     .hero h1 {
