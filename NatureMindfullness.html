@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Nature Mindfulness | MindWell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Poppins:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <style>
+    :root {
+      /* Color palette */
+  --color-primary: #3e9e8e;
+  --color-primary-light: #b0e0d3;
+ /* Color palette */
+ --color-primary: #3e9e8e;
+  --color-primary-light: #b0e0d3;
+  --color-primary-dark: #2a7d6f;
+  --color-accent: #ff7f50;
+  --color-accent-light: #ffad90;
+  --color-text: #333333;
+  --color-text-light: #666666;
+  --color-background: #f8fdfc;
+  --color-card-bg: #ffffff;
+  --color-gradient-start: #dff6f0;
+  --color-gradient-end: #b0e0d3;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-success: #28a745;
+  
+  
+    }
+    html, body {
+      height: 100%;
+      font-size: 18px;
+      font-family: 'Poppins', 'Varela Round', Arial, sans-serif;
+      color: var(--text);
+      margin: 0;
+      background: linear-gradient(120deg, var(--primary-light) 0%, #e7ffe7 100%);
+      overflow-x: hidden;
+    }
+  
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+header.scrolled {
+  padding: 10px 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Agar Koi icon lagna hua to laga lena  */
+
+/* .logo a:before {
+  content:"";
+  font-size: 1.2em;
+} */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-normal);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+    main {
+      max-width: 900px;
+      margin: -40px auto 0 auto;
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      border-radius: 18px;
+      padding: 2rem 1.5rem 3.5rem 1.5rem;
+      position: relative;
+      z-index: 3;
+    }
+    h2 {
+      color: var(--primary-dark);
+      font-family: 'Varela Round';
+      margin-top: 2em;
+      font-size: 2.1rem;
+      margin-bottom: 0.4em;
+    }
+    .intro-leaves {
+      display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+    }
+    .intro-img {
+      flex: 1.2 1 250px;
+      min-width: 180px; max-width: 320px;
+      border-radius: 13px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(30,60,40,0.11);
+    }
+    .intro-img img {
+      display: block; width: 100%; border-radius: 13px;
+    }
+    .intro-text {
+      flex: 2 1 300px;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .section h3 {
+      color: var(--primary);
+      margin-top: 1em;
+      margin-bottom: 0.7em;
+      font-size: 1.33rem;
+      letter-spacing: 0.1em;
+      font-family: 'Varela Round';
+    }
+    .fact-boxes {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-bottom: 1.2em;
+    }
+    .fact-box {
+      background: var(--primary-light);
+      border-left: 5px solid var(--primary);
+      padding: 1em 1.7em;
+      border-radius: 9px;
+      font-size: 1rem;
+      box-shadow: 0 2px 7px rgba(60,110,85,0.07);
+      max-width: 260px;
+      min-width: 170px;
+      margin-bottom: 1em;
+      flex: 1;
+      position: relative;
+      transition: background 400ms;
+    }
+    .fact-box i {
+      color: var(--primary);
+      font-size: 1.5em;
+      display: block;
+      margin-bottom: 0.2em;
+    }
+    .fact-box:hover {
+      background: #c4e7db;
+    }
+
+    .practices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25em;
+      margin-bottom: 0.5em;
+    }
+    .practice-card {
+      background: linear-gradient(110deg, #fff, #e1f4e9 70%);
+      border-radius: 11px;
+      box-shadow: 0 3px 18px rgba(40,80,50,0.07);
+      padding: 1.2em 1em 1.5em 1.2em;
+      min-width: 0;
+      position: relative;
+      transition: transform 220ms, box-shadow 220ms;
+      border-left: 5px solid var(--leaf);
+    }
+    .practice-card:hover {
+      transform: translateY(-5px) scale(1.03) rotate(-0.4deg);
+      box-shadow: 0 9px 36px 0 rgba(30,110,70,0.11);
+      background: linear-gradient(114deg, #e9fbe9 40%, #f6fff7 100%);
+    }
+    .practice-card h4 {
+      margin: 0.3em 0 0.5em 0;
+      color: var(--primary-dark);
+      font-size: 1.1rem;
+      font-family: 'Varela Round';
+    }
+    .practice-card ul, .practice-card ol {
+      margin: 0.4em 0 0.5em 1.5em;
+      padding: 0;
+      font-size: 0.97em;
+    }
+    .practice-card img {
+      width: 100%; border-radius: 6px; margin-bottom: 0.4em;
+      box-shadow: 0 2px 7px rgba(0,44,0,0.06);
+    }
+    .seasonal {
+      background: #f9fff6;
+      border-radius: 10px;
+      padding: 1em 1.3em;
+      margin: 1em 0 2em 0;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 2px 12px 0 rgba(170,150,100,0.06);
+      font-size: 1.04em;
+    }
+    .season-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-top: 0.7em;
+    }
+    .season-tip {
+      flex: 1 1 200px;
+      background: #e5ffe5;
+      border-radius: 9px;
+      padding: 0.8em 1em;
+      margin-bottom: 0.7em;
+      box-shadow: 0 0px 8px rgba(38, 79, 62, 0.04);
+    }
+    .nature-sounds {
+      margin-bottom: 2.2rem;
+    }
+    .sound-player {
+      display: flex;
+      align-items: center;
+      gap: 1.2em;
+      background: linear-gradient(90deg, var(--primary-light), #eafff4 110%);
+      border-radius: 11px;
+      padding: 1em 1.2em;
+    }
+    .sound-item {
+      display: flex; flex-direction: column; align-items: center;
+      margin-right: 1.5em;
+    }
+    .sound-item button {
+      font-size: 2.2em;
+      color: var(--leaf);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: filter 0.35s;
+      margin-bottom: 0.25em;
+    }
+    .sound-item button:active { filter: brightness(1.5);}
+    .sound-item label {
+      font-size: 0.85em;
+      color: var(--primary-dark);
+      font-family: 'Varela Round';
+      margin-top: -7px;
+    }
+    .virtual-walk {
+      margin: 2.5em 0 2em 0;
+      background: linear-gradient(102deg,#e2fff0 80%,#e7f8d9 100%);
+      border-radius: 13px;
+      box-shadow: 0 2px 12px rgba(46,84,40,0.09);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2em;
+      align-items: stretch;
+    }
+    .walk-image {
+      flex: 1.2 1 240px;
+      min-width: 190px;
+      border-radius: 10px 0 0 10px;
+      overflow: hidden;
+      background: #e5ffe7;
+      align-self: stretch;
+      /* keep images same height */
+      display: flex;
+      align-items: stretch;
+    }
+    .walk-image img {
+      height: 100%; width: 100%; object-fit: cover;
+      border-radius: 10px 0 0 10px;
+      min-height: 170px;
+      max-height: 290px;
+      display: block;
+    }
+    .walk-content {
+      flex: 2 1 260px;
+      padding: 1.3em 0.5em 1.3em 0.8em;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .walk-header {
+      font-size: 1.13em;
+      color: var(--text);
+      margin-bottom: 0.2em;
+      font-family: 'Varela Round';
+    }
+    .walk-desc {
+      font-size: 0.99em;
+      color: #314e38;
+      margin-bottom: 0.5em;
+    }
+    .walk-gallery {
+      display: flex;
+      gap: 0.7em;
+      margin-top: 0.5em;
+    }
+    .walk-gallery img {
+      width: 66px; height: 44px; object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.88;
+      cursor: pointer;
+      box-shadow: 0 2px 7px #a9e62833;
+      border: 2px solid #e7ffe7;
+      transition: border 220ms;
+    }
+    .walk-gallery img.active, .walk-gallery img:hover {
+      border: 2px solid var(--leaf);
+      opacity: 1;
+    }
+    .guided-meditation {
+      margin: 2em 0 2.7em 0;
+    }
+    .script-box {
+      background: #e7f4e6;
+      padding: 1em 1.4em;
+      border-radius: 9px;
+      margin: 1em 0 1em 0;
+      box-shadow: 0 0px 6px #43795311;
+      font-size: 1.04em;
+      font-family: 'Varela Round';
+      color: #215a34;
+      position: relative;
+    }
+    .script-header {
+      font-size: 1.06em;
+      color: var(--primary);
+      margin-bottom: 0.5em;
+      margin-top: 1em;
+      font-family: 'Varela Round';
+    }
+    .urban-tips {
+      margin: 2em 0 2em 0;
+      background: #eefbf1;
+      border-radius: 10px;
+      padding: 1.2em 1.2em 1.2em 2em;
+      border-left: 6px solid var(--primary);
+      box-shadow: 0 2px 12px rgba(68,110,50,0.06);
+      font-size: 1.05em;
+      color: #1b442a;
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+    }
+    .urban-tips i {
+      color: var(--accent);
+      font-size: 2em;
+      margin-top: 0.13em;
+      margin-right: 0.7em;
+      flex-shrink: 0;
+      opacity: 0.9;
+    }
+    .urban-tips ul {
+      margin: 0;
+      padding-left: 1.2em;
+      font-size: 0.97em;
+    }
+    @media (max-width: 855px){
+      main {padding: 2rem 0.3rem 2.5rem 0.3rem;}
+      .fact-boxes, .practices-grid, .season-grid {flex-direction: column;}
+      .practices-grid { grid-template-columns: 1fr;}
+      .intro-leaves {flex-direction: column;}
+      .virtual-walk {flex-direction: column;}
+      .walk-image, .walk-content {border-radius: 10px 10px 0 0;}
+      .walk-image img {border-radius: 10px 10px 0 0;}
+    }
+    @media (max-width: 588px){
+      main {border-radius: 0; margin-top: 0; box-shadow: none;}
+      header h1 {font-size: 2rem;}
+      .practice-card, .fact-box, .season-tip, .script-box, .urban-tips {font-size: 1em;}
+      .walk-image img {min-height: 120px;}
+      .walk-content {padding: 0.8em 0.2em;}
+    }
+     /* Footer */
+  footer {
+    background: #1e1e1e;
+    padding: var(--spacing-lg);
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    transition: all var(--transition-normal);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+  }
+  
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  </style>
+</head>
+<body>   <header>
+    <div class="logo">
+        <a href="index.html">MindWell</a>
+    </div>
+   
+    <nav>
+        <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#resources">Resources</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#stories">Stories</a></li>
+            <li><a href="index.html#self-care">Self-Care</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header><br><br>
+<main>
+  <div class="intro-leaves">
+    <div class="intro-img">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Sunlit forest and mindfulness">
+    </div>
+    <div class="intro-text">
+      <h2>Mindful Connection with Nature</h2>
+      <p>
+        Nature has been our greatest healer since ancient times. Science now shows what many have long felt: time outdoors, or even viewing natural scenes, can dramatically lower stress, restore focus, elevate mood, and awaken joy. Whether you’re in a sun-dappled forest or your city park, nature mindfulness brings the soothing rhythms of the outdoors into your daily life.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-spa"></i> The Science: How Nature Boosts Wellbeing</h3>
+    <div class="fact-boxes">
+      <div class="fact-box"><i class="fas fa-brain"></i>
+        Reduces cortisol (stress hormone) levels and blood pressure for a calmer mind.
+      </div>
+      <div class="fact-box"><i class="fas fa-heart"></i>
+        Improves mood and lowers anxiety within just 20 minutes in green spaces.
+      </div>
+      <div class="fact-box"><i class="fas fa-eye"></i>
+        Enhances attention, memory, and creative problem-solving.
+      </div>
+      <div class="fact-box"><i class="fas fa-smile"></i>
+        Boosts feelings of happiness and connection—even through looking at nature images.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3><i class="fas fa-tree"></i> Explore Nature-Based Mindfulness Practices</h3>
+    <div class="practices-grid">
+      <div class="practice-card">
+        <h4>Forest Bathing (Shinrin-Yoku)</h4>
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Forest Bathing">
+        <ul>
+          <li>Stroll in green spaces with all your senses open.</li>
+          <li>Breathe deeply, noticing the scents of earth and leaves.</li>
+          <li>Move slowly, pausing to observe details and listen to natural sounds.</li>
+        </ul>
+      </div>
+      <div class="practice-card">
+        <h4>Garden Mindfulness</h4>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Garden Mindfulness">
+        <ul>
+          <li>Tend a plant or small garden, mindful of the soil and growth.</li>
+          <li>Notice textures, colors, and shapes as you water or prune.</li>
+          <li>Use gardening as a grounding, sensory meditation.</li>
+        </ul>
+      </div>
+      <div class="practice-card">
+        <h4>Nature Senses Walk</h4>
+        <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=400&q=80" alt="Nature Walk">
+        <ol>
+          <li>As you walk outdoors, tune in to one sense at a time.</li>
+          <li>What do you see, hear, smell, touch, and taste?</li>
+          <li>Pause and breathe deeply at intervals for full presence.</li>
+        </ol>
+      </div>
+      <div class="practice-card">
+        <h4>Sky Meditation</h4>
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Sky Meditation">
+        <ul>
+          <li>Lie on your back or sit comfortably outdoors.</li>
+          <li>Gaze gently at the sky, clouds, and light shifts.</li>
+          <li>Let your thoughts drift by like passing clouds—release judgment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="seasonal">
+    <h3><i class="fas fa-calendar"></i> Seasonal Mindfulness</h3>
+    <p>Align your awareness practices with nature’s cycles for renewal year-round:</p>
+    <div class="season-grid">
+      <div class="season-tip"><b>Spring:</b> Notice scent and color of blossoms, the sounds of birds, gentle rainfall. Set new intentions as plants bloom.</div>
+      <div class="season-tip"><b>Summer:</b> Practice mindful barefoot walks, savor cool shade, listen to rustling leaves, appreciate evening light.</div>
+      <div class="season-tip"><b>Autumn:</b> Tune in to changing air, rich aromas, crisp sounds of fallen leaves, the feel of cozy fabrics.</div>
+      <div class="season-tip"><b>Winter:</b> Seek out natural light, observe frost patterns, be mindful of warmth and chilly air, enjoy comforting herbal teas.</div>
+    </div>
+  </div>
+
+  <div class="nature-sounds">
+    <h3><i class="fas fa-volume-up"></i> Nature Sounds Player</h3>
+    <div class="sound-player">
+      <div class="sound-item">
+        <button onclick="playSound('forest')" title="Play/Pause Forest"><i class="fas fa-tree"></i></button>
+        <label>Forest</label>
+      </div>
+      <div class="sound-item">
+        <button onclick="playSound('river')" title="Play/Pause River"><i class="fas fa-water"></i></button>
+        <label>River</label>
+      </div>
+      <div class="sound-item">
+        <button onclick="playSound('birds')" title="Play/Pause Birds"><i class="fas fa-dove"></i></button>
+        <label>Birds</label>
+      </div>
+      <div class="sound-item">
+        <button onclick="playSound('rain')" title="Play/Pause Rain"><i class="fas fa-cloud-showers-heavy"></i></button>
+        <label>Rain</label>
+      </div>
+      <small style="margin-left:2em;color: #277668;opacity:.87">(Click an icon to play/pause. You can combine for a custom mix.)</small>
+    </div>
+    <audio id="audio-forest" src="https://cdn.pixabay.com/audio/2023/09/26/audio_1749080871.mp3" loop></audio>
+    <audio id="audio-river" src="https://cdn.pixabay.com/audio/2022/03/15/audio_116c2dac0f.mp3" loop></audio>
+    <audio id="audio-birds" src="https://cdn.pixabay.com/audio/2022/02/10/audio_113b6c7b1d.mp3" loop></audio>
+    <audio id="audio-rain" src="https://cdn.pixabay.com/audio/2022/09/27/audio_125b6b66d8.mp3" loop></audio>
+  </div>
+
+  <div class="virtual-walk">
+    <div class="walk-image" id="walkImageBox">
+      <img id="walkMainImg" src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=550&q=80" alt="Virtual forest walk">
+    </div>
+    <div class="walk-content">
+      <div class="walk-header">
+        <i class="fas fa-walking"></i> Virtual Nature Walk
+      </div>
+      <div class="walk-desc" id="walkDesc">
+        Imagine yourself walking a mossy path under tall trees. Light filters through green leaves, and birds sing above. Each step grounds you, each breath fills you with calm.
+      </div>
+      <div class="walk-gallery">
+        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=300&q=80" alt="Forest Path"
+          onclick="changeWalkScene(0)" class="active">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Sunlit Meadow"
+          onclick="changeWalkScene(1)">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80" alt="Streamside"
+          onclick="changeWalkScene(2)">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Pine Forest"
+          onclick="changeWalkScene(3)">
+      </div>
+    </div>
+  </div>
+
+  <div class="guided-meditation">
+    <h3><i class="fas fa-mountain"></i> Guided Nature Meditation Scripts</h3>
+    <div class="script-header">Forest Visualization</div>
+    <div class="script-box">
+      With eyes closed or soft gaze, imagine sitting in a peaceful forest. Breathe in the freshness, notice the scent of pine and earth. Feel the support of the ground. Listen to the distant sound of birds and rustling leaves.<br>
+      Let tension melt away as you anchor in the gentle, living world.
+    </div>
+    <div class="script-header">Park Mindfulness Break</div>
+    <div class="script-box">
+      If you're in a city, step outside to a park or quiet corner. Notice the colors of the grass, the shape of passing clouds, the songs of city birds. With each breath, allow your senses to absorb a little more calm and spaciousness.
+    </div>
+    <div class="script-header">Sky Gaze Moment</div>
+    <div class="script-box">
+      Look up at the open sky. Watch how light shifts and clouds flow. Each breath, invite a feeling of openness and lightness into your mind.
+    </div>
+  </div>
+
+  <div class="urban-tips">
+    <i class="fas fa-city"></i>
+    <div>
+      <b>Nature for Urban Environments—Practical Tips:</b>
+      <ul>
+        <li>Bring houseplants into your space and tend them mindfully.</li>
+        <li>Take regular walks in nearby parks or tree-lined streets, focusing on sounds and sights.</li>
+        <li>Use nature images and sounds (like above) to evoke green calm wherever you work or study.</li>
+        <li>Practice cloud-watching or sunset mindfulness from your window or rooftop.</li>
+        <li>Pause to appreciate a single flower, a patch of sunlight, or a gentle breeze.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>MindWell</h3>
+                <p>Dedicated to promoting mental health awareness and providing resources for everyone's wellbeing journey.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#stories">Success Stories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Mental Health Articles</a></li>
+                    <li><a href="#">Self-Help Tools</a></li>
+                    <li><a href="#">Crisis Support</a></li>
+                    <li><a href="#">Find a Therapist</a></li>
+                    <li><a href="#">Support Groups</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates, mental health tips, and resources.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" class="form-control">
+                    </div>
+                    <button type="submit" class="submit-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 MindWell | Mental Health Matters</p>
+            <p>Contact us: +91 649489834 - Tushar Verma | Email: exampletushar@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+    
+  // Nature Sounds Player
+  const sounds = {
+    forest: document.getElementById('audio-forest'),
+    river: document.getElementById('audio-river'),
+    birds: document.getElementById('audio-birds'),
+    rain: document.getElementById('audio-rain')
+  };
+  let playing = {};
+
+  function playSound(type) {
+    let audio = sounds[type];
+    if (!audio) return;
+    if (audio.paused) {
+      audio.volume = 0.45;
+      audio.play();
+      playing[type] = true;
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      playing[type] = false;
+    }
+  }
+  // Virtual Walk Section
+  const walkScenes = [
+    {
+      img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=550&q=80",
+      desc: "Imagine yourself walking a mossy path under tall trees. Light filters through green leaves, and birds sing above. Each step grounds you, each breath fills you with calm."
+    },
+    {
+      img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=550&q=80",
+      desc: "You arrive at a sunny meadow sprinkled with wildflowers. Feel the warmth of sunlight, the gentle breeze brushing your skin, and pause to watch butterflies flutter by."
+    },
+    {
+      img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=550&q=80",
+      desc: "Follow a bubbling stream. Hear the gentle water, watch it sparkle as it flows over smooth stones. Allow tranquility and a sense of flow to fill your mind."
+    },
+    {
+      img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=550&q=80",
+      desc: "Tall pines surround you. The air is cool, carrying scents of sap and earth. Listen to the wind sigh in high branches, let any worries drift away with the breeze."
+    }
+  ];
+  function changeWalkScene(idx) {
+    document.getElementById('walkMainImg').src = walkScenes[idx].img;
+    document.getElementById('walkDesc').innerText = walkScenes[idx].desc;
+    let imgs = document.querySelectorAll('.walk-gallery img');
+    imgs.forEach((img, i) => img.classList.toggle('active', i === idx));
+  }
+  // Stop all audio when leaving the page (hide sound)
+  window.addEventListener('beforeunload', () => {
+    for(const type in sounds) { if(!sounds.hasOwnProperty(type)) continue; sounds[type].pause(); }
+  });
+</script>
+</body>
+</html>
+

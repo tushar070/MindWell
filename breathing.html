@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breathing Techniques | MindWell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/poppins@4.5.13/index.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <style>
+    /* CSS Variables */
+:root {
+  /* Color palette */
+  --color-primary: #3e9e8e;
+  --color-primary-light: #b0e0d3;
+  --color-primary-dark: #6aafa4;
+  --color-accent: #ff7f50;
+  --color-accent-light: #ffad90;
+  --color-text: #9b4141;
+  --color-text-light: #666666;
+  --color-background: #f8fdfc;
+  --color-card-bg: #ffffff;
+  --color-gradient-start: #dff6f0;
+  --color-gradient-end: #b0e0d3;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-success: #28a745;
+  
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Varela Round', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+  --spacing-3xl: 8rem;
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 20px;
+  --border-radius-full: 9999px;
+  --shadow-sm: 0 2px 4px rgba(88, 231, 88, 0.05);
+  --shadow-md: 0 4px 8px rgba(92, 64, 64, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    /* Base font size - will be adjusted with media queries */
+  font-size: 16px;
+  
+  /* Fluid typography using clamp */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-md: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-2xl: clamp(2rem, 1.6rem + 2vw, 2.5rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+  --font-size-4xl: clamp(3rem, 2.4rem + 3vw, 4rem);
+  
+  /* Fluid spacing */
+  --spacing-xxs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --spacing-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --spacing-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+  --spacing-md: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --spacing-lg: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --spacing-xl: clamp(3rem, 2.4rem + 3vw, 5rem);
+  --spacing-2xl: clamp(4rem, 3.2rem + 4vw, 7rem);
+}
+
+        html, body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+header.scrolled {
+  padding: 10px 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Agar Koi icon lagna hua to laga lena  */
+
+/* .logo a:before {
+  content:"";
+  font-size: 1.2em;
+} */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-normal);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+        main {
+            max-width: 950px;
+            margin: 32px auto;
+            padding: 0 1rem 2rem 1rem;
+        }
+        section {
+            background: #fff;
+            margin-bottom: 2.1rem;
+            border-radius: var(--radius);
+            padding: 2.1rem 1.5rem 2.1rem 1.5rem;
+            box-shadow: var(--shadow);
+        }
+        .section-title {
+            color: var(--primary);
+            margin: 0 0 1.4rem 0;
+            font-size: 2rem;
+            letter-spacing: 1.2px;
+        }
+        .benefits-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: start;
+        }
+        .benefit-card {
+            flex: 1 1 220px;
+            background: var(--secondary);
+            border-radius: var(--radius);
+            padding: 1.2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(62, 158, 142, 0.08);
+            min-width: 200px;
+            max-width: 250px;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-card i {
+            font-size: 2.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .benefit-card span {
+            font-weight: 600;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.35em;
+        }
+        /* Technique section */
+        .techniques-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .tech-card {
+            flex: 1 1 300px;
+            background: var(--secondary);
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            padding: 1.3rem 1.1rem 1.8rem 1.1rem;
+            box-shadow: 0 1.5px 10px rgba(62, 158, 142, 0.09);
+            min-width: 245px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .tech-card h3 {
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-top: 0.4em;
+            margin-bottom: 0.25em;
+        }
+        .tech-card p {
+            color: var(--gray);
+            font-size: 1.06rem;
+            line-height: 1.6;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.89em;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 22px;
+            padding: 0.22em 0.7em;
+            margin-bottom: 0.5em;
+            letter-spacing: 1px;
+        }
+        /* Breathing Animation Area */
+        .animation-area {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .breathing-player {
+            flex: 1 1 325px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circle-animate {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #e9faf5 70%, #3e9e8e10 100%);
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 40px #b0e0d3ad;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: breathe-inout 6s infinite;
+        }
+        @keyframes breathe-inout {
+            0% { transform: scale(0.8);}
+            25% { transform: scale(1.08);}
+            50% { transform: scale(1.2);}
+            75% { transform: scale(1.08);}
+            100% { transform: scale(0.8);}
+        }
+        .animation-label {
+            font-size: 1.7rem;
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 1px;
+            opacity: 0.93;
+            background: rgba(255,255,255,0.8);
+            padding: 0.13em 1.3em;
+            border-radius: 13px;
+        }
+        .controls-wrap {
+            display: flex;
+            gap: 0.6em;
+            margin-top: 4px;
+            align-items: center;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        .controls-wrap label, .controls-wrap span {
+            font-weight: 500;
+        }
+        .controls-wrap select, .controls-wrap input[type="range"] {
+            margin-left: 0.6em;
+            border: 1.7px solid var(--primary);
+            border-radius: 6px;
+            font-size: 1em;
+            padding: 0.1em 0.3em;
+        }
+        .tip-card {
+            background: #fff7ee;
+            border-left: 5px solid var(--accent);
+            border-radius: var(--radius);
+            margin-top: 2.2rem;
+            padding: 1.3rem 1.1rem;
+            color: #b35325;
+        }
+        .tip-card strong {
+            color: #b35325;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .animation-area, .techniques-wrap, .benefits-grid {
+                flex-direction: column;
+                gap: 0.6em;
+                align-items: stretch;
+            }
+            .circle-animate { margin: auto; }
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.0rem;}
+            section { 
+                padding: 1rem 0.5rem 1.4rem 0.5rem;
+            }
+            .circle-animate { width: 170px; height: 170px;}
+            .animation-label { font-size: 1.1rem; }
+            .tech-card, .benefit-card { min-width: 0; max-width: none;}
+        }
+        /* Enhance icons for print/PDF by not hiding anything via display:none */
+        @media print {
+            body { background: #fff; }
+            header, section { box-shadow: none; }
+
+        }
+        /* Footer */
+  footer {
+    background: #1e1e1e;
+    padding: var(--spacing-lg);
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    transition: all var(--transition-normal);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+  }
+  
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  
+  /* Pulse animation for CTA buttons */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(62, 158, 142, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0);
+    }
+  }
+  
+  .primary-btn {
+    animation: pulse 2s infinite;
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">MindWell</a>
+        </div>
+     
+       
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#self-care">Self-Care</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Benefits -->
+        <section>
+            <div class="section-title"><i class="fas fa-leaf"></i> Why Practice Breathing Techniques?</div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Relieves Stress</span>
+                    Calms the nervous system and reduces tension.
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-brain"></i>
+                    <span>Improves Focus</span>
+                    Helps manage intrusive thoughts and enhances clarity.
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-smile"></i>
+                    <span>Elevates Mood</span>
+                    Decreases anxiety and supports emotional balance.
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-cloud"></i>
+                    <span>Better Sleep</span>
+                    Encourages relaxation for restful nights.
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques -->
+        <section>
+            <div class="section-title"><i class="fas fa-seedling"></i> Popular Breathing Techniques</div>
+            <div class="techniques-wrap">
+                <div class="tech-card">
+                    <span class="badge">Box Breathing (4x4)</span>
+                    <h3>Box Breathing</h3>
+                    <p>
+                        <b>Inhale 4s - Hold 4s - Exhale 4s - Hold 4s.</b>  
+                        This technique, also known as square breathing, is widely used by athletes and even Navy SEALs to remain calm and focused.<br>
+                        <em>Instructions:</em> Inhale for 4 seconds, hold the breath for 4, exhale for 4, and hold again for 4 seconds. Repeat for several cycles.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="badge">4-7-8 Method</span>
+                    <h3>4-7-8 Breathing</h3>
+                    <p>
+                        <b>Inhale 4s - Hold 7s - Exhale 8s.</b>  
+                        A relaxation tool to help reduce anxiety and fall asleep faster.<br>
+                        <em>Instructions:</em> Inhale quietly through the nose for 4 seconds, hold the breath for 7, and exhale fully (with a gentle 'whoosh') for 8 seconds. Repeat 4-8 times.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="badge">Diaphragmatic</span>
+                    <h3>Diaphragmatic Breathing</h3>
+                    <p>
+                        <b>Belly breathing for fullness.</b>  
+                        Engage the diaphragm rather than shallow chest breathing for maximum oxygenation.<br>
+                        <em>Instructions:</em> Place one hand on your chest, one on your belly. Breathe in through the nose, letting your belly push your hand out. Exhale through pursed lips.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="badge">Resonant (Coherent)</span>
+                    <h3>Resonant Breathing</h3>
+                    <p>
+                        <b>Inhale 5s - Exhale 5s (no hold).</b>  
+                        A calming pattern that can help maintain heart-brain coherence.<br>
+                        <em>Instructions:</em> Breathe in for 5 seconds, breath out for 5 seconds, continuously, for a few minutes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Breathing Exercise -->
+        <section>
+            <div class="section-title"><i class="fas fa-lungs"></i> Try It Now: Interactive Breathing Exercise</div>
+            <div class="animation-area">
+                <div class="breathing-player">
+                    <div class="circle-animate" id="breathCircle">
+                        <span class="animation-label" id="breathLabel">Inhale</span>
+                    </div>
+                    <div class="controls-wrap">
+                        <label for="patternSelect">Technique:</label>
+                        <select id="patternSelect">
+                            <option value="box">Box (4-4-4-4)</option>
+                            <option value="478">4-7-8</option>
+                            <option value="diaphragmatic">Diaphragmatic (4-4)</option>
+                            <option value="resonant">Resonant (5-5)</option>
+                        </select>
+                    </div>
+                    <div class="controls-wrap" style="margin-top: 5px;">
+                        <label for="cycleCount">Cycles:</label>
+                        <input type="range" id="cycleCount" min="2" max="10" value="5" style="width:80px;">
+                        <span id="cycleCountValue">5</span>
+                    </div>
+                    <div class="controls-wrap">
+                        <button id="startBtn" style="margin:0.7em 0.5em 0 0; background:var(--primary);color:#fff;border:none;border-radius:10px;padding:0.45em 1.2em;cursor:pointer;font-size:1.08em;transition: background 0.18s;">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="resetBtn" style="background:var(--accent);color:#fff;border:none;border-radius:10px;padding:0.45em 1.2em;cursor:pointer;font-size:1.08em;transition: background 0.18s;display:none;">
+                            <i class="fas fa-undo"></i> Reset
+                        </button>
+                    </div>
+                    <div style="margin-top:12px;color:var(--primary);font-size:0.93rem;">
+                        <i class="fas fa-info-circle"></i> Follow the animation: let your breath match the size of the circle and the prompt label.
+                    </div>
+                </div>
+                <div style="flex: 1 1 320px;min-width:250px;">
+                    <h4 style="font-weight:600;color:var(--primary);font-size:1.23rem;margin-top:0.7em;">What Happens in a Cycle?</h4>
+                    <ol id="patternSteps" style="margin:0.68em 0 0.4em 1em;padding-left:0.2em;font-size:1.07em;">
+                        <!-- Dynamic content will be injected -->
+                    </ol>
+                    <div class="tip-card">
+                        <strong>Tip:</strong> Breathe gently and naturally; don't force the breath. Over time, longer or slower cycles may feel easier.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra: Guidance on Building the Habit -->
+        <section>
+            <div class="section-title"><i class="fas fa-clock"></i> Build Your Breathing Practice</div>
+            <ul style="font-size:1.09rem;margin-left:1em;">
+                <li>Start with 3-5 minutes a day; consistency counts more than duration.</li>
+                <li>Pair breathing exercises with daily routines (e.g., before sleep, after waking, or during work breaks).</li>
+                <li>Choose a favorite technique and use it when you feel anxious, distracted, or overwhelmed.</li>
+                <li>Track your progress in a journal – note changes in stress, focus, and mood.</li>
+            </ul>
+        </section>
+    </main>
+         <!-- Footer -->
+         <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>MindWell</h3>
+                        <p>Dedicated to promoting mental health awareness and providing resources for everyone's wellbeing journey.</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#resources">Resources</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#stories">Success Stories</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Mental Health Articles</a></li>
+                            <li><a href="#">Self-Help Tools</a></li>
+                            <li><a href="#">Crisis Support</a></li>
+                            <li><a href="#">Find a Therapist</a></li>
+                            <li><a href="#">Support Groups</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to receive updates, mental health tips, and resources.</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" class="form-control">
+                            </div>
+                            <button type="submit" class="submit-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 MindWell | Mental Health Matters</p>
+                    <p>Contact us: +91 649489834 - Tushar Verma | Email: exampletushar@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+    <script>
+        // Breathing pattern definitions [Label, Duration (sec)]
+        const patterns = {
+            "box": [
+                { label: "Inhale", time: 4 },
+                { label: "Hold", time: 4 },
+                { label: "Exhale", time: 4 },
+                { label: "Hold", time: 4 }
+            ],
+            "478": [
+                { label: "Inhale", time: 4 },
+                { label: "Hold", time: 7 },
+                { label: "Exhale", time: 8 }
+            ],
+            "diaphragmatic": [
+                { label: "Inhale (Belly rises)", time: 4 },
+                { label: "Exhale (Belly falls)", time: 4 }
+            ],
+            "resonant": [
+                { label: "Inhale", time: 5 },
+                { label: "Exhale", time: 5 }
+            ]
+        };
+
+        // UI elements
+        const patternSelect = document.getElementById('patternSelect');
+        const breathLabel = document.getElementById('breathLabel');
+        const breathCircle = document.getElementById('breathCircle');
+        const patternSteps = document.getElementById('patternSteps');
+        const startBtn = document.getElementById('startBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const cycleCount = document.getElementById('cycleCount');
+        const cycleCountValue = document.getElementById('cycleCountValue');
+
+        // Set steps for pattern
+        function renderPatternSteps(pattern) {
+            patternSteps.innerHTML = '';
+            const arr = patterns[pattern];
+            arr.forEach(step => {
+                const li = document.createElement('li');
+                li.innerHTML = `<b>${step.label}</b> &mdash; <span style="color:var(--gray);">${step.time}s</span>`;
+                patternSteps.appendChild(li);
+            });
+        }
+        renderPatternSteps(patternSelect.value);
+
+        patternSelect.addEventListener('change', function() {
+            renderPatternSteps(this.value);
+        });
+
+        cycleCount.addEventListener('input', function() {
+            cycleCountValue.textContent = this.value;
+        });
+
+        // Breathing Animation Logic
+        let interval = null;
+        let running = false;
+        let cycleSteps = [];
+        let stepIdx = 0, rep = 0, totalReps = 0;
+
+        function setCircleState(label, pattern, stepIdx) {
+            breathLabel.textContent = patterns[pattern][stepIdx].label;
+            // Animate scale (with class for css scale-override)
+            let scale = 1;
+            // Expand for inhale/hold-inhale, contract for exhale/hold-exhale
+            if (label.toLowerCase().includes('inhale')) scale = 1.22;
+            else if (label.toLowerCase().includes('exhale')) scale = 0.82;
+            else scale = stepIdx === 1 || stepIdx === 3 ? 1.08 : 1;
+            breathCircle.style.transition = 'transform 0.7s cubic-bezier(0.4,1,0.75,1)';
+            breathCircle.style.transform = `scale(${scale})`;
+        }
+
+        function runBreathing(pattern, cycles) {
+            cycleSteps = patterns[pattern];
+            stepIdx = 0;
+            rep = 1;
+            totalReps = cycles;
+            running = true;
+            startBtn.disabled = true;
+            patternSelect.disabled = true;
+            cycleCount.disabled = true;
+            resetBtn.style.display = 'inline-block';
+
+            nextStep();
+        }
+
+        function nextStep() {
+            if (!running) return;
+            const pattern = patternSelect.value;
+            const step = cycleSteps[stepIdx];
+            setCircleState(step.label, pattern, stepIdx);
+
+            let highlight = patternSteps.children[stepIdx];
+            if (highlight) highlight.style.background = "rgba(62,158,142,0.09)";
+            // Timer for current step
+            interval = setTimeout(() => {
+                if (highlight) highlight.style.background = "";
+                stepIdx++;
+                if (stepIdx >= cycleSteps.length) {
+                    stepIdx = 0;
+                    rep++;
+                    if (rep > totalReps) {
+                        finishBreathing();
+                        return;
+                    }
+                }
+                nextStep();
+            }, step.time * 1000);
+        }
+
+        function finishBreathing() {
+            running = false;
+            startBtn.disabled = false;
+            breathLabel.textContent = "Done!";
+            breathCircle.style.transform = "scale(1)";
+            patternSelect.disabled = false;
+            cycleCount.disabled = false;
+            resetBtn.style.display = 'none';
+            setTimeout(() => { if (!running) breathLabel.textContent = "Inhale";}, 2300);
+        }
+
+        function stopBreathing() {
+            running = false;
+            if(interval) clearTimeout(interval);
+            startBtn.disabled = false;
+            breathLabel.textContent = "Inhale";
+            breathCircle.style.transform = "scale(1)";
+            patternSelect.disabled = false;
+            cycleCount.disabled = false;
+            resetBtn.style.display = 'none';
+            if (patternSteps.children[stepIdx])
+                patternSteps.children[stepIdx].style.background = "";
+        }
+
+        startBtn.addEventListener('click', function() {
+            stopBreathing();
+            runBreathing(patternSelect.value, parseInt(cycleCount.value, 10));
+        });
+
+        resetBtn.addEventListener('click', stopBreathing);
+
+        // On pattern change, reset state and info
+        patternSelect.addEventListener('change', () => {
+            stopBreathing();
+        });
+
+        // On count change, reset the breathing state
+        cycleCount.addEventListener('change', () => {
+            stopBreathing();
+        });
+
+        // Responsive fix: reset on resize to force scale repaint
+        window.addEventListener('resize', () => {
+            stopBreathing();
+        });
+    </script>
+</body>
+</html>

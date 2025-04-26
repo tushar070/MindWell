@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Meditation Basics | MindWell</title>
+  <meta name="description" content="Meditation basics: techniques, videos, and benefits for mental wellbeing - MindWell Mental Health">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <style>
+    /* CSS Variables */
+:root {
+  /* Color palette */
+  --color-primary: #3e9e8e;
+  --color-primary-light: #b0e0d3;
+  --color-primary-dark: #339787;
+  --color-accent: #ff7f50;
+  --color-accent-light: #ffad90;
+  --color-text: #6e6161;
+  --color-text-light: #666666;
+  --color-background: #f8fdfc;
+  --color-card-bg: #ffffff;
+  --color-gradient-start: #dff6f0;
+  --color-gradient-end: #b0e0d3;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+  --color-success: #28a745;
+  
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+  --font-heading: 'Varela Round', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 5rem;
+  --spacing-3xl: 8rem;
+  
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 20px;
+  --border-radius-full: 9999px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    /* Base font size - will be adjusted with media queries */
+  font-size: 16px;
+  
+  /* Fluid typography using clamp */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --font-size-md: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --font-size-2xl: clamp(2rem, 1.6rem + 2vw, 2.5rem);
+  --font-size-3xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+  --font-size-4xl: clamp(3rem, 2.4rem + 3vw, 4rem);
+  
+  /* Fluid spacing */
+  --spacing-xxs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);
+  --spacing-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+  --spacing-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1.25rem);
+  --spacing-md: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+  --spacing-lg: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --spacing-xl: clamp(3rem, 2.4rem + 3vw, 5rem);
+  --spacing-2xl: clamp(4rem, 3.2rem + 4vw, 7rem);
+}
+
+h2{
+  color: var(--color-primary);
+}
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', 'Varela Round', Arial, sans-serif;
+      background: linear-gradient(120deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+      color: var(--text);
+      box-sizing: border-box;
+    }
+   /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all var(--transition-normal);
+}
+
+header.scrolled {
+  padding: 10px 30px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+    .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Agar Koi icon lagna hua to laga lena  */
+
+/* .logo a:before {
+  content:"";
+  font-size: 1.2em;
+} */
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-normal);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+    .main-container {
+      max-width: 940px;
+      margin: 32px auto 0 auto;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2.5rem 2rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .animate-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.9s cubic-bezier(.4,0,.2,1), transform 0.9s cubic-bezier(.4,0,.2,1);
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      font-family: 'Varela Round',sans-serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+    }
+    .section-title i {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+    .desc-text {
+      color: #555;
+      font-size: 1.12rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .img-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -10px 28px -10px;
+      gap: 0;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .img-row img {
+      max-width: 260px;
+      border-radius: 14px;
+      margin: 0 10px;
+      box-shadow: 0 3px 12px rgba(62,158,142,0.12);
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .img-row img:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
+    .technique-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+    @media (max-width: 800px) {
+      .main-container { padding: 1rem; }
+      .technique-grid { grid-template-columns: 1fr; }
+      .img-row { flex-direction: column; gap: 18px; }
+    }
+    @media (max-width: 600px) {
+      .main-container { padding: 6vw 2vw; }
+      .header h1 { font-size: 2.1rem;}
+      .section-title { font-size: 1.3rem;}
+      .desc-text { font-size: 1rem;}
+    }
+    .tech-card {
+      background: linear-gradient(120deg, var(--primary-light) 30%, #fff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 7px rgba(62,158,142,0.06);
+      padding: 1.4rem 1.3rem 1.2rem;
+      position: relative;
+      transition: box-shadow .22s;
+      min-height: 210px;
+      cursor: pointer;
+      overflow: visible;
+      border-left: 5px solid var(--primary);
+    }
+    .tech-card:hover {
+      box-shadow: 0 4px 16px rgba(255,127,80,0.14);
+      border-left: 6px solid var(--accent);
+    }
+    .tech-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-family: 'Varela Round', sans-serif;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tech-card ul, .tech-card ol {
+      margin: 0 0 0 18px;
+      padding: 0;
+      color: #3d3d3d;
+      font-size: 1rem;
+    }
+    .benefits-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 5px;
+      margin-bottom: 32px;
+    }
+    .benefit-box {
+      background: var(--primary-light);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(62,158,142,0.10);
+      padding: 10px 18px 9px 13px;
+      font-size: 1.02rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-right: 8px;
+    }
+    .benefit-box i { color: var(--accent);}
+    .video-section {
+      background: #eefaf5;
+      padding: 24px 14px 22px 14px;
+      border-radius: 18px;
+      box-shadow: 0 2px 11px rgba(62,158,142,0.06);
+      max-width: 560px;
+      margin: 0 auto 36px auto;
+      text-align: center;
+    }
+    .video-section h3 {
+      color: var(--primary-dark);
+      margin: 0 0 10px 0;
+      font-size: 1.22rem;
+    }
+    .video-section video {
+      width: 100%;
+      max-width: 470px;
+      border-radius: 10px;
+      margin-bottom: 0;
+      outline: 2px solid var(--accent-light);
+    }
+    .faq-section {
+      margin: 44px 0 30px 0;
+    }
+    .faq-section h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+    }
+    .faq-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e1e6e5;
+      margin-bottom: 12px;
+      padding-bottom: 14px;
+      cursor: pointer;
+      transition: background 0.19s;
+      position: relative;
+      font-size: 1.09rem;
+    }
+    .faq-item:last-child { border-bottom: none;}
+    .faq-question {
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+    }
+    .faq-answer {
+      color: #4d4d4d;
+      margin: 7px 0 0 0;
+      padding-left: 22px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .39s cubic-bezier(.4,0,.2,1);
+      font-weight: 400;
+      font-size: .98rem;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; }
+    .faq-toggle-icon {
+      font-size: 1rem;
+      color: var(--primary-dark);
+      min-width: 18px;
+      transition: transform 0.25s;
+      margin-right: 9px;
+    }
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(90deg);
+      color: var(--accent);
+    }
+    /* fade in image animation */
+    .fade-in-image {
+      opacity: 0;
+      transform: scale(0.97);
+      transition: opacity 1.1s cubic-bezier(.4,0,.2,1), transform .95s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in-image.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* Responsive video */
+    .video-section video { max-width: 98vw !important;}
+    /* Hide scrollbars for export */
+    html, body { overflow-y: auto !important; }
+
+    /* Footer */
+  footer {
+    background: #1e1e1e;
+    padding: var(--spacing-lg);
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column h3 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .footer-links a {
+    color: #ccc;
+    transition: all var(--transition-normal);
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-primary-light);
+  }
+  
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  .copyright {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #444;
+    font-size: var(--font-size-sm);
+    text-align: center;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+  
+  .delay-1 { animation-delay: 0.2s; }
+  .delay-2 { animation-delay: 0.4s; }
+  .delay-3 { animation-delay: 0.6s; }
+  .delay-4 { animation-delay: 0.8s; }
+  
+  /* Pulse animation for CTA buttons */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(62, 158, 142, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(62, 158, 142, 0);
+    }
+  }
+  
+  .primary-btn {
+    animation: pulse 2s infinite;
+  }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">MindWell</a>
+        </div>
+     
+       
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#stories">Stories</a></li>
+                <li><a href="index.html#self-care">Self-Care</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div class="main-container">
+    <div class="animate-in section-title"><i class="fas fa-spa"></i> <h2>What is Meditation?</h2></div>
+    <div class="desc-text animate-in">
+      Meditation is a practice of training your awareness to achieve a mentally clear and emotionally calm state.<br>
+      Whether you’re a beginner or seasoned practitioner, meditation helps reduce stress, improve concentration, and enhances overall wellbeing. There are many styles, including mindfulness, mantra, guided, and breath-based meditation.
+    </div>
+    <div class="img-row">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="meditation in nature" class="fade-in-image" style="max-width:210px;">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="breathing meditation" class="fade-in-image">
+      <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=600&q=80" alt="guided meditation" class="fade-in-image">
+    </div>
+    <div class="section-title animate-in" style="margin-top:40px;"><i class="fas fa-check-circle"></i> <h2>Why Practice Meditation?</h2></div>
+    <div class="benefits-list animate-in">
+      <span class="benefit-box"><i class="fas fa-heartbeat"></i> Reduces Stress</span>
+      <span class="benefit-box"><i class="fas fa-brain"></i> Improves Focus</span>
+      <span class="benefit-box"><i class="fas fa-smile-beam"></i> Boosts Mood</span>
+      <span class="benefit-box"><i class="fas fa-bed"></i> Enhances Sleep</span>
+      <span class="benefit-box"><i class="fas fa-seedling"></i> Promotes Mindfulness</span>
+    </div>
+
+    <div class="section-title animate-in"><i class="fas fa-lightbulb"></i> <h2>Core Techniques</h2></div>
+    <div class="technique-grid">
+      <div class="tech-card animate-in" tabindex="0">
+        <h3><i class="fas fa-wind"></i> Mindfulness Meditation</h3>
+        <ul>
+          <li>Bring attention to your breath, bodily sensations, thoughts, and feelings in the moment.</li>
+          <li>Practice sitting quietly, noticing thoughts without judgment and coming back to the present.</li>
+          <li class="key-step">Try: <em>Breathe in for 4 counts, out for 6 counts, repeat for 2 minutes.</em></li>
+        </ul>
+      </div>
+      <div class="tech-card animate-in" tabindex="0">
+        <h3><i class="fas fa-music"></i> Mantra-Based Meditation</h3>
+        <ul>
+          <li>Silently repeat a calming word, thought, or phrase (mantra), such as “Om”, “Peace”, or “Let go”.</li>
+          <li>When distracted, gently return to the mantra.</li>
+          <li class="key-step">Try: <em>Repeat your chosen mantra with every breath for 3-5 minutes.</em></li>
+        </ul>
+      </div>
+      <div class="tech-card animate-in" tabindex="0">
+        <h3><i class="fas fa-headphones"></i> Guided Meditation</h3>
+        <ul>
+          <li>Listen to a teacher or recording that leads you through visualization, breathing, or body scanning.</li>
+          <li>Good for beginners and those seeking specific outcomes (calm, sleep, compassion).</li>
+          <li class="key-step">Try: <em>Follow a guided session from a meditation app or YouTube.</em></li>
+        </ul>
+      </div>
+      <div class="tech-card animate-in" tabindex="0">
+        <h3><i class="fas fa-cloud"></i> Breath-Based Meditation</h3>
+        <ul>
+          <li>Focus exclusively on the rhythm of your natural breath or specific breathing patterns.</li>
+          <li>Great for instant stress relief and centering yourself in moments of anxiety.</li>
+          <li class="key-step">Try: <em>Inhale 4, hold 4, exhale 4, hold 4 (box breathing) for 2 mins.</em></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title animate-in"><i class="fas fa-video"></i><h2> Try It: Quick Guided Meditation</h2></div>
+    <div class="video-section animate-in">
+      <h3>5-Minute Guided Meditation for Beginners</h3>
+      <video controls playsinline webkit-playsinline>
+        <source src="https://cdn.jsdelivr.net/gh/sammyballesteros/video-hosting/files/5-min-meditation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div style="color:#3e9e8e;font-size:.97rem; margin-top: 2px;">
+        Follow along with this calming video to help you find stillness and clarity.
+      </div>
+    </div>
+    
+    <div class="section-title animate-in"><i class="fas fa-question-circle"></i> <h2>Meditation FAQs</h2></div>
+    <div class="faq-section animate-in">
+      <ul class="faq-list">
+        <li class="faq-item">
+          <div class="faq-question"><span class="faq-toggle-icon"><i class="fas fa-chevron-right"></i></span>Do I have to clear my mind completely to meditate?</div>
+          <div class="faq-answer">
+            No, it’s normal for thoughts to arise! Meditation is about gently noticing them and returning to your focus (breath, mantra, etc) without judgment.
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><span class="faq-toggle-icon"><i class="fas fa-chevron-right"></i></span>How long & how often should I meditate?</div>
+          <div class="faq-answer">
+            Even 1-5 minutes daily makes a difference. Consistency is more important than duration—try to build a comfortable daily or weekly routine.
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><span class="faq-toggle-icon"><i class="fas fa-chevron-right"></i></span>Will meditation help with stress and anxiety?</div>
+          <div class="faq-answer">
+            Yes, scientific studies show meditation significantly reduces stress, anxiety, and helps you better manage your emotions over time.
+          </div>
+        </li>
+        <li class="faq-item">
+          <div class="faq-question"><span class="faq-toggle-icon"><i class="fas fa-chevron-right"></i></span>Can I meditate lying down?</div>
+          <div class="faq-answer">
+            Yes, although you may fall asleep! For beginners, sitting upright (on a chair or cushion) is often best to stay alert but relaxed.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section-title animate-in"><i class="fas fa-book"></i> Further Resources</div>
+    <div class="desc-text animate-in">
+      <ul>
+        <li>Download free meditation apps like Insight Timer, Calm, or Headspace.</li>
+        <li>Find guided sessions on <a href="https://www.youtube.com/results?search_query=guided+meditation" target="_blank" style="color:var(--accent);text-decoration:underline;">YouTube</a> or Spotify.</li>
+        <li>Read articles from <a href="https://www.mindful.org/meditation/mindfulness-getting-started/" target="_blank" style="color:var(--accent);text-decoration:underline;">Mindful.org</a> for best practices and scientific insights.</li>
+      </ul>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <span style="font-size:1.05rem;color:#333;">
+        “You should sit in meditation for 20 minutes a day—unless you're too busy; then you should sit for an hour.”<br>
+        <span style="color:var(--primary-dark);">— Zen proverb</span>
+      </span>
+    </div>
+  </div>
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MindWell</h3>
+                    <p>Dedicated to promoting mental health awareness and providing resources for everyone's wellbeing journey.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mental Health Articles</a></li>
+                        <li><a href="#">Self-Help Tools</a></li>
+                        <li><a href="#">Crisis Support</a></li>
+                        <li><a href="#">Find a Therapist</a></li>
+                        <li><a href="#">Support Groups</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates, mental health tips, and resources.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="form-control">
+                        </div>
+                        <button type="submit" class="submit-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 MindWell | Mental Health Matters</p>
+                <p>Contact us: +91 649489834 - Tushar Verma | Email: exampletushar@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+  <script>
+    // Fade in on scroll
+    function handleFadeIn() {
+      const elems = document.querySelectorAll('.animate-in, .fade-in-image');
+      const windowHeight = window.innerHeight;
+      elems.forEach(el => {
+        const boxTop = el.getBoundingClientRect().top;
+        if (boxTop < windowHeight - 80) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', handleFadeIn);
+    window.addEventListener('scroll', handleFadeIn);
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', function() {
+        if(this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Keyboard for FAQ & cards
+    document.querySelectorAll('.tech-card').forEach(card => {
+      card.addEventListener('keydown', function(e) {
+        if(e.key === 'Enter' || e.key === ' ') {
+          card.classList.toggle('expand');
+        }
+      });
+    });
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('keydown', function(e) {
+        if(e.key === 'Enter' || e.key === ' ') {
+          item.click();
+        }
+      });
+      item.tabIndex = 0;
+    });
+    // Animate images in after load
+    window.addEventListener('load', function(){
+      document.querySelectorAll('.fade-in-image').forEach(function(img, i){
+        setTimeout(function(){ img.classList.add('visible'); }, 500 + 200*i);
+      });
+    });
+  </script>
+</body>
+</html>
