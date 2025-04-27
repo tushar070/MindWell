@@ -31,37 +31,42 @@ tabButtons.forEach(button => {
         document.getElementById(tabId).classList.add('active');
     });
 });
-
-// Testimonial slider
 const sliderDots = document.querySelectorAll('.slider-dot');
 const sliderTrack = document.querySelector('.testimonial-track');
+const slides = document.querySelectorAll('.testimonial-slide');
 const sliderArrows = document.querySelectorAll('.slider-arrow');
 let currentSlide = 0;
 
 function updateSlider() {
-    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-    sliderDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
+  slides.forEach((slide, index) => {
+    slide.classList.toggle('active', index === currentSlide);
+  });
+
+  sliderDots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
 }
 
 sliderDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlider();
-    });
+  dot.addEventListener('click', () => {
+    currentSlide = index;
+    updateSlider();
+  });
 });
 
 sliderArrows.forEach(arrow => {
-    arrow.addEventListener('click', () => {
-        if (arrow.classList.contains('prev')) {
-            currentSlide = (currentSlide - 1 + sliderDots.length) % sliderDots.length;
-        } else {
-            currentSlide = (currentSlide + 1) % sliderDots.length;
-        }
-        updateSlider();
-    });
+  arrow.addEventListener('click', () => {
+    if (arrow.classList.contains('prev')) {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    } else {
+      currentSlide = (currentSlide + 1) % slides.length;
+    }
+    updateSlider();
+  });
 });
+
+// Initialize
+updateSlider();
 
 // Typing Animation
 function typeWriter(element, text, speed = 50, callback = null) {

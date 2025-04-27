@@ -117,8 +117,15 @@
 
 
 /* Improved smooth scrolling */
-html {
+/* html {
   scroll-behavior: smooth;
+} */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.testimonial-slider, .testimonial-track {
+  overflow-x: hidden;
 }
 
 /* For browsers that support scroll timeline */
@@ -813,22 +820,39 @@ nav a:hover::after {
   z-index: 1;
 }
 
-.testimonial-slider {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 .testimonial-track {
-  display: flex;
-  transition: transform 0.5s ease;
+  position: relative;
 }
 
 .testimonial-slide {
-  flex: 0 0 100%;
-  padding: 0 var(--spacing-md);
+  display: none;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
 }
+
+.testimonial-slide.active {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@media (max-width: 768px) {
+  .testimonial-slide {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-slide {
+    padding: 10px;
+  }
+}
+
+
 
 .story {
   background: white;
@@ -1192,22 +1216,29 @@ nav a:hover::after {
     font-weight: 500;
   }
   
-  .rating-scale {
-    display: flex;
-    justify-content: space-between;
-    margin: var(--spacing-md) 0;
-    flex-wrap: wrap;
-  }
-  
-  .rating-option {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: var(--spacing-sm);
-    flex: 1;
-    min-width: 80px;
-  }
+  /* Make quiz options responsive */
+.rating-scale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rating-option {
+  flex: 1 1 100px;
+  max-width: 120px;
+  text-align: center;
+}
+
+.rating-text {
+  width: 100%;
+  padding: 9px 9px 12px 9px;
+  font-size: 0.8rem;
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
   
   .rating-option input {
     position: absolute;
@@ -1215,15 +1246,27 @@ nav a:hover::after {
     cursor: pointer;
   }
   
-  .rating-text {
+  /* .rating-text {
     padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--border-radius-md);
-    transition: all var(--transition-normal);
-    text-align: center;
+
+  
+    
     font-size: var(--font-size-sm);
-    border: 2px solid var(--color-primary-light);
+    
     width: 100%;
+  } */
+  @media (max-width: 600px) {
+    .rating-scale {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .rating-option {
+      max-width: 200px;
+      flex: 1 1 100%;
+    }
   }
+  
   
   .rating-option input:checked + .rating-text {
     background-color: var(--color-primary);
