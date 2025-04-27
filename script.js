@@ -32,6 +32,7 @@ tabButtons.forEach(button => {
     });
 });
 
+// Testimonial slider
 const sliderDots = document.querySelectorAll('.slider-dot');
 const sliderTrack = document.querySelector('.testimonial-track');
 const sliderArrows = document.querySelectorAll('.slider-arrow');
