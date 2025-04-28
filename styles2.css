@@ -819,21 +819,30 @@ nav a:hover::after {
   position: relative;
   z-index: 1;
 }
+.testimonial-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* VERY IMPORTANT */
+  max-height: 100%;
+}
 
 .testimonial-track {
-  position: relative;
+  display: flex;
+  transition: transform 0.5s ease;
+  overflow: hidden; /* Prevent scrollbar */
 }
 
 .testimonial-slide {
-  display: none;
+  flex: 0 0 100%;
   width: 100%;
+  box-sizing: border-box;
+  display: none;
   animation: fadeIn 0.5s ease-in-out;
 }
 
 .testimonial-slide.active {
   display: block;
 }
-
 
 @keyframes fadeIn {
   from {opacity: 0;}
@@ -2267,7 +2276,7 @@ nav a:hover::after {
   .slider-arrows {
     display: none;
   }
-}
+
 
 @media (max-width: 480px) {
   .stats {
