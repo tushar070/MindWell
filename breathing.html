@@ -861,48 +861,27 @@ nav a {
 
         <!-- Interactive Breathing Exercise -->
         <section>
-            <div class="section-title"><i class="fas fa-lungs"></i><h2> Try It Now: Interactive Breathing Exercise</h2></div>
-            <div class="animation-area">
-                <div class="breathing-player">
-                    <div class="circle-animate" id="breathCircle">
-                        <span class="animation-label" id="breathLabel">Inhale</span>
-                    </div>
-                    <div class="controls-wrap">
-                        <label for="patternSelect">Technique:</label>
-                        <select id="patternSelect">
-                            <option value="box">Box (4-4-4-4)</option>
-                            <option value="478">4-7-8</option>
-                            <option value="diaphragmatic">Diaphragmatic (4-4)</option>
-                            <option value="resonant">Resonant (5-5)</option>
-                        </select>
-                    </div>
-                    <div class="controls-wrap" style="margin-top: 5px;">
-                        <label for="cycleCount">Cycles:</label>
-                        <input type="range" id="cycleCount" min="2" max="10" value="5" style="width:80px;">
-                        <span id="cycleCountValue">5</span>
-                    </div>
-                    <div class="controls-wrap">
-                        <button id="startBtn" style="margin:0.7em 0.5em 0 0; background:var(--primary);color:#fff;border:none;border-radius:10px;padding:0.45em 1.2em;cursor:pointer;font-size:1.08em;transition: background 0.18s;">
-                            <i class="fas fa-play"></i> Start
-                        </button>
-                        <button id="resetBtn" style="background:var(--accent);color:#fff;border:none;border-radius:10px;padding:0.45em 1.2em;cursor:pointer;font-size:1.08em;transition: background 0.18s;display:none;">
-                            <i class="fas fa-undo"></i> Reset
-                        </button>
-                    </div>
-                    <div style="margin-top:12px;color:var(--primary);font-size:0.93rem;">
-                        <i class="fas fa-info-circle"></i> Follow the animation: let your breath match the size of the circle and the prompt label.
-                    </div>
-                </div>
-                <div style="flex: 1 1 320px;min-width:250px;">
-                    <h4 style="font-weight:600;color:var(--primary);font-size:1.23rem;margin-top:0.7em;">What Happens in a Cycle?</h4>
-                    <ol id="patternSteps" style="margin:0.68em 0 0.4em 1em;padding-left:0.2em;font-size:1.07em;">
-                        <!-- Dynamic content will be injected -->
-                    </ol>
-                    <div class="tip-card">
-                        <strong>Tip:</strong> Breathe gently and naturally; don't force the breath. Over time, longer or slower cycles may feel easier.
-                    </div>
-                </div>
+          <div class="breathing-player">
+            <div class="circle-animate" id="breathCircle">
+              <span id="breathLabel">Inhale</span>
             </div>
+            <div>
+              <label for="patternSelect">Technique:</label>
+              <select id="patternSelect">
+                <option value="box">Box (4-4-4-4)</option>
+                <option value="478">4-7-8</option>
+              </select>
+            </div>
+            <div>
+              <label for="cycleCount">Cycles:</label>
+              <input type="range" id="cycleCount" min="2" max="10" value="5">
+              <span id="cycleCountValue">5</span>
+            </div>
+            <div>
+              <button id="startBtn"><i class="fas fa-play"></i> Start</button>
+              <button id="resetBtn" style="display:none;"><i class="fas fa-undo"></i> Reset</button>
+            </div>
+          </div>
         </section>
 
         <!-- Extra: Guidance on Building the Habit -->
@@ -983,36 +962,6 @@ tabButtons.forEach(button => {
     });
 });
 
-// Testimonial slider
-const sliderDots = document.querySelectorAll('.slider-dot');
-const sliderTrack = document.querySelector('.testimonial-track');
-const sliderArrows = document.querySelectorAll('.slider-arrow');
-let currentSlide = 0;
-
-function updateSlider() {
-    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-    sliderDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-    });
-}
-
-sliderDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateSlider();
-    });
-});
-
-sliderArrows.forEach(arrow => {
-    arrow.addEventListener('click', () => {
-        if (arrow.classList.contains('prev')) {
-            currentSlide = (currentSlide - 1 + sliderDots.length) % sliderDots.length;
-        } else {
-            currentSlide = (currentSlide + 1) % sliderDots.length;
-        }
-        updateSlider();
-    });
-});
 
 // Mobile menu toggle
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

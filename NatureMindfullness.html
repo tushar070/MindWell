@@ -1069,6 +1069,39 @@ nav a {
         </div>
     </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sounds = {
+      forest: document.getElementById('audio-forest'),
+      river: document.getElementById('audio-river'),
+      birds: document.getElementById('audio-birds'),
+      rain: document.getElementById('audio-rain')
+    };
+    let playing = {};
+
+    window.playSound = function(type) {
+      const audio = sounds[type];
+      if (!audio) return;
+      if (audio.paused) {
+        audio.volume = 0.45;
+        audio.play();
+        playing[type] = true;
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+        playing[type] = false;
+      }
+    };
+
+    window.addEventListener('beforeunload', () => {
+      for (const type in sounds) {
+        if (sounds.hasOwnProperty(type)) {
+          sounds[type].pause();
+        }
+      }
+    });
+  });
+</script>
 
 
 
